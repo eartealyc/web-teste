@@ -45,7 +45,7 @@ const mapaTipos = {
 function processarCSV(csv) {
   const resultado = Papa.parse(csv, {
     header: true,
-    skipEmptyLines: true,
+    skipEmptyLines: true
   });
 
   return resultado.data.map(linha => ({
