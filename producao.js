@@ -43,22 +43,23 @@ const mapaTipos = {
 /*-----------PROCESSAR CSV---------*/
 
 function processarCSV(csv) {
-  const linhas = csv.trim().split("\n").slice(1);
-
-  return linhas.map(linha => {
-    const colunas = linha.split(",");
-
-    return {
-      tipo: colunas[0]?.trim(),
-      codigo: colunas[1]?.split("|").map(o => o.trim()) || [],
-      descricao: colunas[2]?.trim(),
-      autor: colunas[3]?.trim(),
-      local: colunas[4]?.trim(),
-      pais: colunas[5]?.trim(),
-      link: colunas[6]?.trim()
-    };
+  const resultado = Papa.parse(csv, {
+    header: true,
+    skipEmptyLines: true
   });
+
+  return resultado.data.map(linha => ({
+    tipo: linha.tipo?.trim(),
+    codigo: linha.codigo?.split("|").map(o => o.trim()) || [],
+    descricao: linha.descricao?.trim(),
+    autor: linha.autor?.trim(),
+    local: linha.local?.trim(),
+    pais: linha.pais?.trim(),
+    link: linha.link?.trim(),
+    ano: linha.ano?.trim()
+  }));
 }
+
 
 /*---------RENDERIZAÇÃO---------*/
 
@@ -77,7 +78,31 @@ function renderizar(lista) {
   <span class="item-geral item-nome">${tipoFormatado}</span>
   </br></br>
 
+  ${item.descricao ? `
+  <span class="item-geral">
+      <strong>Descripción | Descrição | Description: </strong>
+      <span class="item-descricao">${item.descricao}</span>
+  </span>
+  </br></br>
+  ` : ""}
+  </br></br>
+
   <span class="item-grupo"> 
+      ${item.autor ? `
+      <span class="item-geral">
+          <strong>Autor | Author: </strong>
+          <span class="item-autor">${item.autor}</span>
+      </span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      ` : ""}
+      
+      ${item.ano ? `
+      <span class="item-geral">
+          <strong>Año | Ano | Year: </strong>
+          <span class="item-ano">${item.ano}</span>
+      </span>
+      ` : ""}
+
       ${item.pais ? `
       <span class="item-geral">
           <strong>Pais | País| Country: </strong>
@@ -86,31 +111,16 @@ function renderizar(lista) {
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
       ` : ""}
 
-      ${item.autor ? `
-      <span class="item-geral">
-          <strong>Autor | Author: </strong>
-          <span class="item-autor">${item.autor}</span>
-      </span>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      ` : ""}
+  </span>
 
-      ${item.local ? `
+  </br>
+
+  ${item.local ? `
       <span class="item-geral">
           <strong>Local | Place: </strong>
           <span class="item-autor">${item.local}</span>
       </span>
       ` : ""}
-  </span>
-
-  </br></br>
-
-  ${item.descricao ? `
-  <span class="item-geral">
-      <strong>Descripción | Descrição | Description: </strong>
-      <span class="item-descricao">${item.descricao}</span>
-  </span>
-  </br></br>
-  ` : ""}
 
   ${item.link ? `
   <span class="item-geral item-link">
@@ -171,6 +181,7 @@ function filtrarLista() {
         item.descricao,
         item.autor,
         item.local,
+        tem.ano,
         item.pais
       ].some(campo =>
         campo?.toLowerCase().includes(termoBusca)
