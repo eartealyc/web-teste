@@ -45,8 +45,7 @@ const mapaTipos = {
 function processarCSV(csv) {
   const resultado = Papa.parse(csv, {
     header: true,
-    skipEmptyLines: true,
-    delimiter: ";"
+    skipEmptyLines: true
   });
 
   return resultado.data.map(linha => ({
@@ -77,16 +76,17 @@ function renderizar(lista) {
 
     li.innerHTML = `
   <span class="item-geral item-nome">${tipoFormatado}</span>
-  </br></br>
+  
+  </br>
 
   ${item.descricao ? `
   <span class="item-geral">
       <strong>Descripción | Descrição | Description: </strong>
       <span class="item-descricao">${item.descricao}</span>
   </span>
-  </br></br>
   ` : ""}
-  </br></br>
+
+  </br>
 
   <span class="item-grupo"> 
       ${item.autor ? `
@@ -102,6 +102,7 @@ function renderizar(lista) {
           <strong>Año | Ano | Year: </strong>
           <span class="item-ano">${item.ano}</span>
       </span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       ` : ""}
 
       ${item.pais ? `
@@ -113,8 +114,6 @@ function renderizar(lista) {
       ` : ""}
 
   </span>
-
-  </br>
 
   ${item.local ? `
       <span class="item-geral">
