@@ -1,0 +1,96 @@
+		.section-equipe{
+			display: flex;
+			flex-wrap: wrap;
+			width: 99vw;
+			justify-content: space-around;
+			background-color: #f8f8ff;
+			margin: 10vh auto;
+		}
+	.pre-content{
+		width: 99vw;
+		height: 45vh;
+		margin: 0;
+	}
+			.grupo0{
+				display: flex;
+				flex-wrap: wrap;
+				width: 90vw;
+				justify-content: space-around;
+				margin: 5vh 30vw;
+			}
+				.bandeiras{
+					width: 25px;
+					height: 20px;
+					margin: 10px;
+					float: right;
+				}
+
+			.grupo{
+				display: flex;
+				flex-wrap: wrap;
+				width: 90vw;
+				justify-content: space-around;
+				margin: 5vh auto;
+			}		
+					.grupo-pais-txt{
+						width: 99vw;
+						text-align: center;
+						font-size: 2em;
+						color: black;
+						margin-bottom: 5vh;
+					}
+						.titulo-equipe{
+							width: 99vw;
+						}
+					.membro-info{
+						grid-area: "membro-img" "membro-info-content" "membro-nome";
+						justify-content: space-around;
+						text-align: center;
+						width: 10vw;
+						height: 30vh;
+						background-color: #dcdcdc;
+						border-radius: 10px;
+						margin: 3vh 2vw;
+						cursor: default;
+					}
+						.membro-img{
+							width: 7vw;
+							height: 16vh;
+							margin: auto 1.5vw;
+							border-radius: 0px;
+						}
+						.membro-nome{
+							display: flex;
+							justify-content: center;
+							align-items: center;
+							align-items: center;
+							text-align: center;
+							max-width: 100%;
+							font-size: 0.9rem;
+							margin: auto;
+							height: 9vh;
+							width: 9vw;
+						}
+							.membro-info-content{
+								display: none;
+								width: 100%;
+								height: 100%;
+								margin: auto;
+								justify-content: center;
+							}
+								.membro-info-content-p{
+									display: flex;
+									flex-wrap: wrap;
+									font-size: 0.95em;
+									text-align: center;
+									justify-content: center;
+									margin: auto 7px;
+									align-items: center;
+									align-content: center;
+								}
+								.membro-info:hover .membro-img, .membro-info:hover .membro-nome, .membro-info:hover .bandeiras{
+									display: none;
+								}
+								.membro-info:hover .membro-info-content{
+									display: grid;
+								}

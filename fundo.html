@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<link rel="shortcut icon" href="img/EArteALyC.ico">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EArte ALyC</title>
+    <style>
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            width: 99vw;
+            overflow-x: hidden;
+        }
+        .ficha{
+            display: flex;
+            width: 80vw;
+            height: 60vh;   
+            margin: 8vh auto;
+            background-color: #008080;
+            border-radius: 20px;
+            z-index: 0;
+        }
+        .ficha-img{
+            width: 20vw;
+            height: 60vh;
+            border-radius: 20px 0 0 20px;
+        }
+        .ficha-txt{
+            display: flex;
+            margin: auto;
+            width: 50vw;
+            height: 50vh;
+            background-color: white;
+            overflow-y: auto;
+        }
+        .ficha-txt-p{
+        }
+        .titulo-1{
+            font-size: 1.5em;
+            margin: auto 20px;
+            text-align: justify;
+            font-family: calibri;
+        }
+.buttons {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 60px;
+    gap: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    outline: none;
+    opacity: 50%;
+    font-weight: bold;
+    z-index: 999;
+}
+
+button:hover {
+    opacity: 100%;
+}
+
+.voltar-div{
+	display: block;
+	width: 80vw;
+	position: fixed;
+    top: 20px;
+    left: 20px;
+}
+.voltar{
+	display: flex;	
+	width: 50px;
+	height: 50px;	
+	border-radius: 50%;
+	background-color: #DCDCDC;
+	text-decoration: none;
+	opacity: 40%;
+}
+.voltar:hover{
+	opacity: 100%;
+}
+	.voltar p{
+		color: black;
+		font-size: 1.5em;
+		margin: auto;
+		transform: rotate(180deg);
+		margin: auto;
+	}
+
+.img-fundo{
+    width: 99vw;
+    height: 40vh;
+}
+
+    </style>
+</head>
+<body>
+    <img src="img/fundo-alyc.png" class="img-fundo">
+    <div class="buttons">
+        <button onclick="showText('en')" id="b1">EN</button>
+        <button onclick="showText('pt')" id="b2">PT</button>
+        <button onclick="showText('es')" id="b3">ES</button>
+    </div>
+    <div class="voltar-div"><a href="index.html" class="voltar"> <p>➜</p> </a></div>
+
+    <!-- Fichas -->
+    <div class="ficha" id="ficha-1">
+        <img src="img/arara.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-1">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-2">
+        <img src="img/chile-1.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-2">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-3">
+        <img src="img/barragem.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-3">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-4">
+        <img src="img/macaco.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-4">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-5">
+        <img src="img/protesto.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-5">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-6">
+        <img src="img/kakuy.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-6">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-7">
+        <img src="img/yanomami.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-7">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-8">
+        <img src="img/cafe.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-8">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-9">
+        <img src="img/paraguas.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-9">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+    <div class="ficha" id="ficha-10">
+        <img src="img/musica.png" class="ficha-img">
+        <div class="ficha-txt" id="ficha-txt-10">
+            <!-- Texto será exibido aqui -->
+        </div>
+    </div>
+
+<script>
+    const fichaTexts = {
+        en: [
+            `<p class="titulo-1">The Lear's macaw, or Anodorhynchus leari, is an endemic species of Brazil, found in the Caatinga region. Deforestation, illegal hunting, and the trafficking of wildlife have led to a drastic reduction in its population, pushing it to the brink of extinction. Currently, the species' survival depends on breeding in captivity. Some initiatives aim to preserve the species and eventually reintroduce it into the wild under favorable conditions (<a href="https://www.gov.br/icmbio/pt-br/assuntos/noticias/ultimas-noticias/ararinhas-azuis-sao-reintroduzidas-na-natureza-apos-mais-de-vinte-anos">see more</a>).</p>`,
+
+            `<p class="titulo-1">The collapse of the San José mine in Chile occurred in 2010, when 33 workers were trapped about 700 meters underground. The miners were conducting copper extraction activities when the collapse occurred, leaving them trapped for 69 days. The incident highlighted the lack of adequate mine safety regulations, as well as corporate negligence regarding safety. The episode is another example of the relationship between the exploitation of nature and humans to meet society's consumption demand (<a href="https://es.wikipedia.org/wiki/Rescate_de_la_mina_San_Jos%C3%A9">see more</a>).</p>`,
+
+            `<p class="titulo-1">The Brazilian cities of Mariana and Brumadinho share dramatic scenes of socio-environmental crimes. In 2015, Mariana was hit by the collapse of the Fundão dam, releasing mining waste and causing environmental devastation and loss of lives. Brumadinho faced a similar situation in 2019, when the dam of the Córrego do Feijão Mine collapsed, triggering a catastrophe of similar proportions. Both cities face ongoing challenges of environmental recovery, reconstruction, and support for affected communities. The company VALE S.A. was held responsible, as signs of dam collapse had been evident for decades (<a href="https://periodicos.pucminas.br/index.php/geografia/article/view/25541">see more</a>).</p>`,
+
+            `<p class="titulo-1">On May 9, 2024, nine Mexican cities reached record temperatures. Ciudad Victoria recorded 47ºC. In the state of Tabasco, howler monkeys were falling from trees and dying due to high temperatures and dehydration. Due to deforestation, access to water was hindered and vegetation cover reduced. This is another example of record temperatures recorded worldwide, reflecting climate change (<a href="https://g1.globo.com/mundo/noticia/2024/05/21/macacos-bugios-caem-mortos-das-arvores-por-causa">see more</a>).</p>`,
+
+            `<p class="titulo-1">In defense of life, diversity, and common goods against extractivist projects in the region, the "Plurinational Walk for Water, Land, and Life" is a massive mobilization that has been taking place since 2008 in the town of Cosquín, in the province of Córdoba (Argentina). "It is not just a walk, but an affirmation of the need for a change in the way we live as a community and build social bonds to relate. Wherever we look, we see dominant logics of decline and destruction," says the organizing multisectoral collective. Photo: José Maldonado (28/01/23).</p>`,
+
+            `<p class="titulo-1">Santiago with its estuaries, mountains, rivers, salt flats, and gentle elevations is a refuge of abundant nature that has inspired the most beautiful verses and chacareras. Birds with their song have inspired humans to imitate them and sing like them about their life, loves, troubles, and nostalgia... Among these feelings, the most representative and mysterious is the mournful song of the Kakuy. This bird and its legend have become a symbol of nature and Santiago's culture (<a href="https://youtube.com/shorts/EiJqeCColSQ?feature=shared">see more</a>).</p>`,
+
+            `<p class="titulo-1">The Yanomami are indigenous peoples of the Amazon who have suffered from the advance of gold mining on their lands since the 1970s. The invasion has polluted rivers, destroyed the forest, and brought diseases, violence, and malnutrition. In 2023, communities faced an unprecedented humanitarian crisis, with no access to water, food, and medicines. The case was denounced as an act of genocide due to complicity of the then brasilian government. In 2023, with the change of the leadership, a public health emergency was declared, starting operations to expel invaders and provide assistance. The situation of the Yanomami symbolizes the ongoing struggle for the rights of indigenous peoples (<a href="https://www.gov.br/saude/pt-br/composicao/svsa/coes/coe-yanomami">see more</a>).</p>`,
+
+            `<p class="titulo-1">Coffee production reveals deep layers of a history marked by structural inequalities. Far beyond the aroma and flavor that made it a symbol, the coffee supply chain is rooted in a model that has historically favored agrarian elites while relegating peasant, Indigenous, and Afro-descendant communities to peripheral and subordinate roles. Even today, the hands that harvest the coffee — often under precarious conditions — receive little recognition and almost no return proportional to the value they generate. This reality remains a living trace of a profoundly exclusionary development model.</p>`,
+
+            `<p class="titulo-1">The Umbrella March, held in Santiago, Chile, in 2011, became a symbol of the student struggle for free, high-quality public education. In the rain, thousands took to the streets with umbrellas raised — not just for protection, but as a gesture of resistance and hope. The act revealed the strength of Chilean social movements and their ability to turn everyday moments into political expression. More than just a protest, the march entered collective memory as a cry for social justice and the democratization of access to knowledge.</p>`,
+
+            `<p class="titulo-1">“La era está pariendo un corazón”, by Silvio Rodríguez, is one of the most emblematic songs of post-revolutionary Cuban music. Written in 1968, during a time of political upheaval across Latin America, the song uses powerful metaphors of pain, birth, and transformation. The “era” giving birth to a heart represents revolutionary hope, but also the anguish and sacrifice it demands. With a gentle melody and profound lyrics, Silvio conveys both the idealism and the suffering of a people in transition. The song became a hymn of the Nueva Trova movement and remains relevant as a poetic expression of Cuba’s contradictions.</p>`
+        ],
+        pt: [
+            `<p class="titulo-1">A ararinha-azul, ou Anodorhynchus leari, é uma espécie endêmica do Brasil, encontrada na região da Caatinga. O desmatamento, a caça ilegal e o tráfico de animais silvestres culminou na redução drástica da sua população, levando à beira da extinção. Atualmente, a sobrevivência da espécie repousa em cativeiro. Algumas iniciativas almejam a preservação da espécie e, eventualmente, sua reintrodução no ambiente natural, sob condições favoráveis (<a href="https://www.gov.br/icmbio/pt-br/assuntos/noticias/ultimas-noticias/ararinhas-azuis-sao-reintroduzidas-na-natureza-apos-mais-de-vinte-anos">ver mais</a>).</p>`,
+
+            `<p class="titulo-1">O colapso da mina San José, no Chile, ocorreu em 2010, quando 33 trabalhadores ficaram presos a cerca de 700 metros de profundidade. Os mineiros realizavam atividades de extração de cobre quando ocorreu o desabamento que os deixou presos por 69 dias. O incidente reforçou a falta de regulamentação adequada de segurança nas minas, assim como a negligência das empresas em relação à segurança. O episódio é mais um exemplo da relação entre a exploração da natureza e do ser humano para atender a uma demanda de consumo da sociedade (<a href="https://es.wikipedia.org/wiki/Rescate_de_la_mina_San_Jos%C3%A9">ver mais</a>).</p>`,
+
+            `<p class="titulo-1">As cidades brasileiras de Mariana e Brumadinho compartilham cenários dramáticos de crimes socioambientais. Em 2015, Mariana foi atingida pelo rompimento da barragem de Fundão, liberando rejeitos de mineração e causando devastação ambiental e perda de vidas. Brumadinho enfrentou um cenário semelhante em 2019, quando a barragem da Mina Córrego do Feijão cedeu, desencadeando uma catástrofe de proporções similares. Ambas as cidades enfrentam desafios contínuos de recuperação ambiental, reconstrução e apoio às comunidades afetadas. A empresa VALE S.A. foi apontada como responsável, uma vez que há décadas já haviam indicios de rompimento das barragens (<a href="https://periodicos.pucminas.br/index.php/geografia/article/view/25541">ver mais</a>).</p>`,
+
+            `<p class="titulo-1">No dia 9 de maio de 2024, nove cidades mexicanas atingiram temperaturas recordes. Em Ciudad Victoria, registrou-se 47ºC. No estado de Tabasco, macacos bugios estavam caindo das árvores e morrendo devido a alta temperatura e desidratação. Por conta do desmatamento, o acesso à água foi dificultado e a cobertura da vegetação reduzida. Este é mais um exemplo de temperatura recorde registrada ao redor do mundo, reflexo das mudanças climáticas (<a href="https://g1.globo.com/mundo/noticia/2024/05/21/macacos-bugios-caem-mortos-das-arvores-por-causa">ver mais</a>).</p>`,
+            
+            `<p class="titulo-1">Em defesa da vida, da diversidade e dos bens comuns frente aos projetos extrativistas na região, a "Caminhada Plurinacional pela Água, Terra e Vida" é uma mobilização massiva que ocorre desde 2008 na localidade de Cosquín, na província de Córdoba, Argentina. "Não é apenas uma caminhada, mas um ato de afirmação sobre a necessidade de uma mudança na forma como temos vivido como comunidade e construído laços sociais para nos relacionarmos. Para onde quer que olhemos, vemos lógicas dominantes de decadência e destruição," afirma o coletivo multissetorial organizador. Fotografía: José Maldonado (28/01/23).</p>`,
+
+            `<p class="titulo-1">Santiago com seus esteros, montes, rios, salares, suas suaves elevações são refúgio de uma natureza abundante que tem sido inspiração para os mais belos versos e chacareras. Os pássaros com seu canto, inspiraram o ser humano a imitá-los e cantar como eles sua vida, seus amores, suas mágoas, suas nostalgias... Desses sentimentos, o mais representativo e misterioso é o canto lamentoso do Kakuy. Esta ave e sua lenda se tornaram um símbolo da natureza e da cultura santiagueña (<a href="https://youtube.com/shorts/EiJqeCColSQ?feature=shared">ver mais</a>).</p>`,
+
+            `<p class="titulo-1">Os Yanomami são povos originários da Amazônia que têm sofrido com o avanço do garimpo em suas terras desde a década de 1970. A invasão poluiu os rios, destruiu a floresta e trouxe doenças, violência e desnutrição. No ano de 2023, as comunidades se encontravam diante de uma crise humanitária sem precedentes, pois já não havia acesso à água, alimentos e medicamentos. O caso foi denunciado como um ato de genocídio por haver conivência do então governo nacional brasileiro. Em 2023, com a mudança de lidernaça, foi declarada emergência de saúde pública, iniciando operações para expulsar os invasores e fornecer assistência. A situação dos Yanomami simboliza a luta contínua pelos direitos dos povos originários (<a href="https://www.gov.br/saude/pt-br/composicao/svsa/coes/coe-yanomami">ver mais</a>).</p>`,
+
+            `<p class="titulo-1">A produção cafeeira revela camadas profundas de uma história marcada por desigualdades estruturais. Muito além do aroma e do sabor que a tornaram símbolos, a cadeia do café está enraizada em um modelo que historicamente favoreceu elites agrárias, enquanto relegou comunidades camponesas, indígenas e afrodescendentes a posições periféricas e subalternizadas. Ainda hoje, as mãos que colhem o café — muitas vezes sob condições precárias — recebem pouco reconhecimento e quase nenhum retorno proporcional ao valor gerado. Esse cenário é um vestígio vivo de um modelo de desenvolvimento profundamente excludente.</p>`,
+
+            `<p class="titulo-1">A Marcha de los Paraguas, realizada em Santiago do Chile em 2011, tornou-se um símbolo marcante da luta estudantil por uma educação pública, gratuita e de qualidade. Sob chuva e até neve, milhares saíram às ruas com guarda-chuvas erguidos — não apenas como proteção, mas como gesto de resistência e esperança. O ato revelou a força dos movimentos sociais chilenos e sua capacidade de transformar o cotidiano em expressão política. Mais do que uma simples manifestação, a marcha entrou para a memória coletiva como um grito pacífico por justiça social e pela democratização do acesso ao conhecimento.</p>`,
+
+            `<p class="titulo-1">“La era está pariendo un corazón”, de Silvio Rodríguez, é uma das canções mais emblemáticas da música cubana pós-revolução. Escrita em 1968, durante um período de efervescência política na América Latina, a música traz versos carregados de metáforas sobre dor, nascimento e transformação. A “era” que pare um coração representa a esperança revolucionária, mas também a angústia diante dos sacrifícios exigidos. Com melodia suave e letra profunda, Silvio transmite tanto o idealismo quanto o sofrimento de um povo em transição. A canção tornou-se um hino da Nueva Trova e permanece atual como expressão poética das contradições vividas em Cuba.</p>`
+        ],
+        es: [
+           `<p class="titulo-1">El guacamayo de Lear, o Anodorhynchus leari, es una especie endémica de Brasil, encontrada en la región de la Caatinga. La deforestación, la caza ilegal y el tráfico de animales silvestres han llevado a una drástica reducción de su población, llevándola al borde de la extinción. Actualmente, la supervivencia de la especie depende de la cría en cautiverio. Algunas iniciativas buscan la preservación de la especie y, eventualmente, su reintroducción en el medio natural, bajo condiciones favorables (<a href="https://www.gov.br/icmbio/pt-br/assuntos/noticias/ultimas-noticias/ararinhas-azuis-sao-reintroduzidas-na-natureza-apos-mais-de-vinte-anos">ver más</a>).</p>`,
+
+        `<p class="titulo-1">El colapso de la mina San José, en Chile, ocurrió en 2010, cuando 33 trabajadores quedaron atrapados a unos 700 metros de profundidad. Los mineros estaban realizando actividades de extracción de cobre cuando ocurrió el derrumbe que los dejó atrapados durante 69 días. El incidente puso de relieve la falta de regulación adecuada de seguridad en las minas, así como la negligencia de las empresas en materia de seguridad. El episodio es otro ejemplo de la relación entre la explotación de la naturaleza y el ser humano para satisfacer la demanda de consumo de la sociedad (<a href="https://es.wikipedia.org/wiki/Rescate_de_la_mina_San_Jos%C3%A9">ver más</a>).</p>`,
+
+        `<p class="titulo-1">Las ciudades brasileñas de Mariana y Brumadinho comparten escenarios dramáticos de crímenes socioambientales. En 2015, Mariana fue golpeada por el colapso de la presa de Fundão, liberando desechos de minería y causando devastación ambiental y pérdida de vidas. Brumadinho enfrentó una situación similar en 2019, cuando la presa de la Mina Córrego do Feijão cedió, desencadenando una catástrofe de proporciones similares. Ambas ciudades enfrentan desafíos continuos de recuperación ambiental, reconstrucción y apoyo a las comunidades afectadas. La empresa VALE S.A. fue señalada como responsable, ya que desde hace décadas había indicios de colapso de las presas (<a href="https://periodicos.pucminas.br/index.php/geografia/article/view/25541">ver más</a>).</p>`,
+
+        `<p class="titulo-1">El 9 de mayo de 2024, nueve ciudades mexicanas alcanzaron temperaturas récord. En Ciudad Victoria se registraron 47ºC. En el estado de Tabasco, los monos aulladores estaban cayendo de los árboles y muriendo debido a la alta temperatura y deshidratación. Debido a la deforestación, el acceso al agua se dificultó y la cobertura vegetal se redujo. Este es otro ejemplo de las temperaturas récord registradas en todo el mundo, reflejo del cambio climático (<a href="https://g1.globo.com/mundo/noticia/2024/05/21/macacos-bugios-caem-mortos-das-arvores-por-causa">ver más</a>).</p>`,
+
+        `<p class="titulo-1">En defensa de la vida, la diversidad y los bienes comunes ante los proyectos extractivistas en la región, la “Caminata Plurinacional por el Agua, la Tierra y la Vida” es una masiva movilización que se realiza desde el año 2008 en la localidad de Cosquín, en la provincia de Córdoba (Argentina). «No es solo una caminata, sino un acto de afirmación sobre la necesidad de un cambio en el modo en el que venimos viviendo como comunidad y construir vínculos sociales para relacionarnos. Hacia donde miremos vemos lógicas dominantes de decadencia y destrucción» afirma el colectivo multisectorial organizador. Fotografía: José Maldonado (28/01/23).</p>`,
+
+        `<p class="titulo-1">Santiago con sus esteros, montes, ríos, salares, sus suaves elevaciones son refugio de una naturaleza abundante que ha sido inspiración para los más bellos versos y chacareras. Las aves con su canto, han inspirado al ser humano a imitarlas y cantar como ellas su vida, sus amores, sus pesares, sus nostalgias...De estos sentimientos, el más representativo y misterioso, es el canto lastimero del Kakuy. Esta ave y su leyenda se han convertido en un símbolo de la naturaleza y la cultura santiagueña (<a href="https://youtube.com/shorts/EiJqeCColSQ?feature=shared">ver más</a>).</p>`,
+
+        `<p class="titulo-1">Los Yanomami son pueblos originarios de la Amazonía que han sufrido el avance del garimpo en sus tierras desde la década de 1970. La invasión ha contaminado los ríos, destruido la selva y ha traído enfermedades, violencia y desnutrición. En 2023, las comunidades se encontraban en una crisis humanitaria sin precedentes, ya que ya no tenían acceso al agua, alimentos y medicinas. El caso fue denunciado como un acto de genocidio por la complicidad del entonces gobierno nacional brasileño. En 2023, con el cambio de gobierno, se declaró emergencia de salud pública, comenzando operaciones para expulsar a los invasores y brindar asistencia. La situación de los Yanomami simboliza la lucha continua por los derechos de los pueblos originarios (<a href="https://www.gov.br/saude/pt-br/composicao/svsa/coes/coe-yanomami">ver más</a>).</p>`,
+
+        `<p class="titulo-1">La producción cafetalera revela capas profundas de una historia marcada por desigualdades estructurales. Más allá del aroma y el sabor que la convirtieron en un símbolo, la cadena del café está arraigada en un modelo que históricamente ha favorecido a las élites agrarias, mientras ha relegado a comunidades campesinas, indígenas y afrodescendientes a posiciones periféricas y subordinadas. Incluso hoy, las manos que cosechan el café —muchas veces en condiciones precarias— reciben poco reconocimiento y casi ningún retorno proporcional al valor que generan. Esta realidad es un vestigio vivo de un modelo de desarrollo profundamente excluyente.</p>`,
+
+        `<p class="titulo-1">La Marcha de los Paraguas, realizada en Santiago de Chile en 2011, se convirtió en un símbolo de la lucha estudiantil por una educación pública, gratuita y de calidad. Bajo la lluvia, miles salieron a las calles con paraguas levantados — no solo como protección, sino como un gesto de resistencia y esperanza. La acción reveló la fuerza de los movimientos sociales chilenos y su capacidad para transformar lo cotidiano en expresión política. Más que una simple manifestación, la marcha quedó en la memoria colectiva como un grito por justicia social y por la democratización del acceso al conocimiento.</p>`,
+
+        `<p class="titulo-1">“La era está pariendo un corazón”, de Silvio Rodríguez, es una de las canciones más emblemáticas de la música cubana posterior a la Revolución. Escrita en 1968, en un contexto de agitación política en América Latina, la canción utiliza metáforas poderosas sobre el dolor, el nacimiento y la transformación. La “era” que pare un corazón simboliza la esperanza revolucionaria, pero también la angustia y los sacrificios implicados. Con una melodía suave y una letra profunda, Silvio transmite tanto el idealismo como el sufrimiento de un pueblo en tránsito. La canción se convirtió en un himno de la Nueva Trova y sigue vigente como expresión poética de las contradicciones de Cuba.</p>`
+        ]
+    };
+
+    function showText(language) {
+        for (let i = 1; i <= 10; i++) {
+            const fichaText = document.getElementById(`ficha-txt-${i}`);
+            fichaText.innerHTML = fichaTexts[language][i - 1];
+        }
+    }
+
+    // Exibir texto em espanhol ao carregar a página
+    window.onload = function() {
+        showText('es');
+    };
+
+
+
+
+ var b1 = document.getElementById("b1");
+    var b2 = document.getElementById("b2");
+    var b3 = document.getElementById("b3");
+
+    b1.addEventListener("click", function() {
+        b1.style.backgroundColor = "gray";
+        b2.style.backgroundColor = "#DCDCDC";
+        b3.style.backgroundColor = "#DCDCDC";
+    });
+
+    b2.addEventListener("click", function() {
+        b1.style.backgroundColor = "#DCDCDC";
+        b2.style.backgroundColor = "gray";
+        b3.style.backgroundColor = "#DCDCDC";
+    });
+
+    b3.addEventListener("click", function() {
+        b1.style.backgroundColor = "#DCDCDC";
+        b2.style.backgroundColor = "#DCDCDC";
+        b3.style.backgroundColor = "gray";
+    });
+
+
+</script>
+</body>
+</html>
+

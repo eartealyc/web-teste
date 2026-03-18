@@ -1,0 +1,77 @@
+body{
+	cursor: default;
+}
+	.pre-content{
+		width: 99vw;
+		height: 45vh;
+		margin: 0;
+	}
+
+/*----mapa-----*/
+		.mapa{
+			display: flex;
+			justify-content: space-around;
+			width: 60vw;
+			height: 90vh;
+			margin: auto;
+			background-color: transparent;
+		}
+			.mapa-alyc a{
+				transform: rotate(180deg);
+				 transform-origin: 600px 575px;
+			}
+			.mapa a:hover{
+				fill: gray;
+				cursor: pointer;
+			}
+			.Paraguay, .Bolivia,  .Peru, .Uruguay, .Costa-Rica, .Dominican-Republic, .Ecuador, .Guatemala, .Guyana, .Haiti, .Nicaragua, .Panama, .El-Salvador, .Suriname, .Venezuela, .French-Guiana, .Antigua-and-Barbuda, .Bahamas, .Barbados, .Curaçao, .Dominica, .Falkland-Islands, .Grenada, .Saint-Kitts-and-Nevis, .Saint-Lucia, .Saint-Martin, .Maldives, .Puerto-Rico, .Trinidad-and-Tobago, .Saint-Vincent-and-the-Grenadines, .British-Virgin-Islands, .United-States-Virgin-Islands, .Martinique, .Guadeloupe{
+				fill: #F8F8FF;
+			}
+
+			.local{
+				width: 100%;
+				height: 90vh;
+			}
+			.exibirInformacoes{
+				width: 20vw;
+				height: 20vh;
+				position: absolute;
+				text-align: left;
+				margin-left: 7vw;
+			}
+				.local p{
+					position: absolute;
+				}
+					#local-argentina{
+						transform: translate(10vw, 10vh);
+					}
+					#local-chile{
+						transform: translate(50vw, 10vh);	
+					}
+					#local-brasil{
+						transform: translate(8vw, 37.5vh);
+					}
+					#local-colombia{
+						transform: translate(55vw, 37.5vh);
+					}
+					#local-cuba{
+						transform: translate(15vw, 65vh);
+					}
+					#local-mexico{
+						transform: translate(60vw, 65vh);
+					}
+
+
+/*---resumo---*/
+      .resumo{
+      	width: 80vw;
+      	display: flex;
+      	flex-wrap: wrap;
+      	margin: auto;
+      }
+/*---resumo fim---*/
+
+  .margem{
+  	width: 99vw;
+  	height: 10vh;
+  }

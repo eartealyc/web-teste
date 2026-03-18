@@ -1,0 +1,43 @@
+body{
+	z-index: -1;
+}
+.banco{
+	display: flex;
+	justify-content: space-around;
+	width: 90vw;
+	flex-wrap: wrap;
+	margin: 5vh auto 20vh auto;
+}
+	.pais{
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		width: 150px;
+		height: 175px;
+		background-color: #f5f5f5;
+		margin: auto;
+		border-radius: 10px;
+		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+
+
+	}
+		.pais-img{
+				width: 80%;
+				height: 50%;
+				margin: auto;
+		}
+		.pais-txt{
+			font-size: 1.5em;
+			margin: auto;
+			width: 100%;
+			position: relative;
+			text-align: center;
+		}
+			.banco-p1{
+				margin-top: 0;
+				text-align: center;
+			}
+.sobre-span:hover .pais{
+	z-index: -1;
+}
+

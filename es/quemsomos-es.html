@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+	<link rel="shortcut icon" href="../img/EArteALyC.ico">
+	<head>
+		<title>EArte ALyC</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="../css/header-navbar-footer.css">
+		<link rel="stylesheet" type="text/css" href="../css/style-geral.css">
+		<link rel="stylesheet" type="text/css" href="../css/quemsomos.css">
+		<script type="text/javascript" src="../js-geral.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+	</head>
+	<body>
+		<header id="header">
+<!-- idioma -->
+		    <div id="idioma">
+		    	<div id="idioma-icone"><img src="../img/traducao.png" class="img-idioma"></div>
+		    	<div id="idioma-opcao">
+		    		<a href="" class="idioma-a">Español</a>
+			        <a href="../pt/quemsomos-pt.html" class="idioma-a">Português</a>
+			        <a href="../en/quemsomos-en.html" class="idioma-a">English</a></div>
+				</div>
+<!-- cabeçalho -->
+			<img src="../img/fundo-alyc-3.png" id="img-home">
+			<div id="cabeçalho">
+				<div class="logo"></div>
+				<h1 class="h1">Colectivo de Investigadores en Educación Ambiental Superior en América Latina y el Caribe</h1>
+				<a href="../fundo.html" class="fundo-img" target="_blank">• ver imagen •</a>
+			</div>
+			<div class="vazio">
+			</div>
+<!-- nevegação -->
+			<div id="navbar">
+				<a href="../index.html" class="navbar-txt navbar-txt-acervo">Página de inicio</a>				
+				
+				<span class="navbar-txt-acervo" id="nav-sobre-span">
+					<a class="navbar-txt color1">Sobre el proyecto ▾</a>
+					
+					<span class="sobre-span" >
+						<a class="acesso-content-nav" href="noticias-es.html">EArte ALyC Noticias</a>
+						<a class="acesso-content-nav color1" href="quemsomos-es.html">¿Quiénes somos?</a>
+						<a class="acesso-content-nav" href="historia-es.html">Nuestra historia</a>
+						<a class="acesso-content-nav" href="equipe-es.html">Equipo</a>
+						<a class="acesso-content-nav" href="criterios-es.html">Criterios de selección</a>
+						<a class="acesso-content-nav" href="descritores-es.html">Descriptores</a>						
+						<a class="acesso-content-nav" href="documentos-es.html">Documentos</a>
+					</span>
+
+				</span>
+
+				<a href="banco-es.html" class="navbar-txt navbar-txt-acervo">Banco EArte ALyC</a>
+
+				<a href="panel-es.html" class="panel navbar-txt navbar-txt-acervo">
+					<span class="span-panel">&#x24D8; Explore visualizaciones gráficas sobre las tesis de nuestra base de datos.</span>
+					<p>Datos panorámicos</p>
+				</a>
+
+				<a href="producao-es.html" class="prod navbar-txt navbar-txt-acervo">
+					<span class="span-prod">&#x24D8; Acceda a las investigaciones desarrolladas por los miembros de EArte ALyC a partir de nuestros bancos de datos.</span>
+					<p>Producción intelectual</p>
+				</a>
+
+				<div class="navbar-txt navbar-txt-acervo contato-h">
+					<p class="nav-color">Contacto</p>
+					<span class="contato-email">
+							<p class="ajuste-1">earte_alyc@unahur.edu.ar</p>
+							<button onclick="copiarLink('earte_alyc@unahur.edu.ar')" class="btn-copiar">Copiar</button>
+					</span>
+					<div class="mensagem-copiado" id="mensagem-copiado">Correo electrónico copiado!</div>				
+				</div>
+			</div>
+		</header>
+<!-- seta -->
+			<a class="seta" href="#top"><i class="fas fa-arrow-up"></i></a>
+<!-- cabeçalho fim -->
+<!-- corpo -->
+		<div class="pre-content" id="top"></div>
+		<div id="quem-somos" >
+			<p class="titulo-1">¿Quiénes somos?</p>
+			<p class="quem-somos-p titulo-2-3 center">EArte ALyC es una comunidad latinoamericana de educadores, investigadores e interesados en Educación Ambiental, formada por Argentina, Brasil, Chile, Colombia, Cuba y México.</p>
+		</div>
+
+<!--mapa-->		
+	
+			<div class="local" id="local-map" onclick="limparMap()">			
+				<p class="exibirInformacoes" id="local-argentina"></p>					
+				<p class="exibirInformacoes" id="local-chile"><span id="info-map" style="opacity: 50%;" class="txt-1-5">Haga clic en el mapa para obtener información</span></p>
+				<p class="exibirInformacoes" id="local-brasil"></p>
+				<p class="exibirInformacoes" id="local-colombia"></p>
+				<p class="exibirInformacoes" id="local-cuba"></p>
+				<p class="exibirInformacoes" id="local-mexico"></p>
+
+				<div class="mapa">
+					<svg class="mapa-alyc" baseprofile="tiny" fill="#dcdcdc" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width=".8" version="1.2" viewBox="350 250 500 650" width="500" height="650" xmlns="http://www.w3.org/2000/svg" > 
+
+						<a onclick="Argentina()"> 
+							<path class="Argentina" d="M 669.1 851.7 666.1 851.5 661.1 851.5 655.1 837.9 658.2 840.7 662.5 845.3 670.3 849 677.6 850.5 676.8 853.5 672.4 853.8 669.1 851.7 Z">
+							</path>	 
+						</a>
+						<a onclick="Argentina()"> 
+							<path class="Argentina" d="M 638.6 644.7 649.9 655.1 654.5 656.1 661.8 660.9 667.7 663.4 668.8 666.2 664.6 676 670.4 677.7 676.7 678.7 680.9 677.7 685.2 672.7 685.5 667.1 688.1 665.8 691.3 669.6 691.7 674.7 687.5 678.2 684.2 680.8 678.9 687.1 672.9 695.8 672.4 701 672 707.6 673.2 714 672.3 715.4 672.7 719.5 673 722.9 680.8 728.4 681 732.8 684.9 735.6 685.2 738.7 681.9 746.9 674.9 750.4 664.7 751.7 658.7 751 660.8 754.9 660.9 759.6 662.7 762.8 660.2 765.1 655.1 766 649.5 763.6 648 765.3 650.5 771.6 654.5 773.5 656.8 771.5 659.3 774.8 655.1 776.8 652.2 780.8 653.4 787.1 653.3 790.5 648.5 790.5 645.5 793.7 645.6 798.5 652.1 803.1 657.3 804.3 657.5 810 652.9 813.5 652.3 820.8 648.8 823.2 647.9 826.1 652.1 832.6 656.7 836.1 654.6 835.8 649.7 834.8 637.6 834 634.1 830.4 632.2 825.8 629.1 826.2 626.5 823.9 623.4 817.4 626.1 814.6 626.2 810.7 624.4 807.5 625.1 802.1 624 793.8 622.2 790.1 624 788.9 622.6 786.5 619.8 785.3 620.6 782.6 617.5 780.2 613.8 772.9 615.5 771.6 612.2 763.8 611.4 757.3 611.2 751.6 613.7 749.3 610.4 743 608.8 737.2 611.8 733 610.4 727.6 612 721.4 610.6 715.5 609 714.3 604.1 703.2 606.2 696.6 604.5 690.4 605.4 684.5 608 678.5 611.3 674.5 609.3 672 610.1 669.9 608.5 659.2 614.1 656.1 615.3 649.4 614.4 647.8 618.4 642 625.9 643.6 629.6 648.2 631.2 643 637.6 643.3 638.6 644.7 Z">
+							</path>
+						</a>
+						<a onclick="Brazil()"> 
+							<path class="Brazil" d="M665.8 489.6l3.1 0.6 0.6-1.4-1-1.2 0.6-1.9 2.3 0.6 2.7-0.7 3.2 1.4 2.5 1.3 1.7-1.7 1.3 0.2 0.8 1.8 2.7-0.4 2.2-2.5 1.8-4.7 3.4-5.9 2-0.3 1.3 3.6 3 11.2 3.1 1.1 0.1 4.4-4.3 5.3 1.7 1.9 10.1 1 0.2 6.5 4.3-4.2 7.1 2.3 9.5 3.9 2.8 3.7-0.9 3.6 6.6-2 11 3.4 8.5-0.2 8.4 5.3 7.4 7.2 4.4 1.8 4.8 0.3 2.1 2 2 8.2 1.1 3.9-2.1 10.6-2.7 4.2-7.7 8.9-3.4 7.3-4 5.5-1.4 0.2-1.3 4.7 0.9 12-1.1 9.9-0.3 4.2-1.6 2.6-0.5 8.6-5.2 8.3-0.5 6.7-4.3 2.7-1.1 3.9-6 0-8.5 2.4-3.7 2.9-6 1.9-6.1 5.1-4.1 6.4-0.3 4.8 1.3 3.5-0.3 6.5-0.8 3.1-3.4 3.6-4.5 11.3-4 5-3.2 3.1-1.5 6.1-2.9 3.6-2.1-3.6 1.8-3.1-3.8-4.3-4.8-3.6-6.3-4.1-1.9 0.2-6.3-5-3.4 0.7 6-8.7 5.3-6.3 3.3-2.6 4.2-3.5-0.4-5.1-3.2-3.8-2.6 1.3 0.7-3.7 0.3-3.8-0.3-3.6-2.1-1.1-2 1-2.1-0.3-0.8-2.4-1.1-5.9-1.2-1.9-3.9-1.8-2.2 1.3-5.9-1.3-0.4-8.7-2-3.5 1.6-1.4-0.8-3.6 1.3-2.8 0.6-5.1-1.7-4-3.2-1.8-0.8-2.5 0.5-3.7-10.7-0.3-2.8-7.5 1.7-0.1-0.3-2.7-1.2-1.9-0.5-3.7-3.4-1.9-3.5 0-2.5-1.8-3.9-1.3-2.3-2.4-6.4-1.1-6.5-5.7 0.3-4.3-0.9-2.5 0.4-4.8-7.3 1.1-2.9 2.4-4.8 2.6-1.1 1.9-2.9 0.2-4.2-0.6-3.2 1.1-2.6-0.7-0.1-9.7-4.4 3.7-5-0.1-2.3-3.5-3.8-0.3 1-2.8-3.3-3.9-2.6-5.8 1.5-1.1-0.2-2.8 3.4-1.8-0.7-3.5 1.4-2.2 0.3-3 6.3-4.4 4.6-1.2 0.8-1 5.1 0.3 2.2-17.6 0.1-2.8-0.9-3.6-2.6-2.4 0.1-4.7 3.2-1 1.1 0.7 0.2-2.5-3.3-0.7 0-4 11 0.2 1.9-2.3 1.6 2.1 1 3.8 1.1-0.8 3.1 3.4 4.4-0.4 1.1-2 4.2-1.5 2.4-1.1 0.7-2.7 4.1-1.8-0.3-1.4-4.8-0.5-0.7-4.1 0.3-4.3-2.5-1.6 1.1-0.6 4.1 0.8 4.5 1.6 1.7-1.5 4.1-1 6.4-2.4 2.1-2.5-0.7-1.8 3-0.2 1.2 1.4-0.8 2.9 2 0.9 1.2 3-1.6 2.3-1 5.4 1.4 3.3 0.3 3 3.5 3 2.8 0.3 0.6-1.3 1.8-0.3 2.6-1.1 1.8-1.7 3.2 0.6 1.3-0.3z" id="BR"></path>					
+						</a> 
+						<a onclick="Colombia()"> 
+							<path class="Colombia" d="M584.4 426.2l-3.7 1.1-1.6 3.2-2.3 1.8-1.8 2.4-0.9 4.6-1.8 3.8 2.9 0.4 0.6 2.9 1.2 1.5 0.3 2.5-0.7 2.4 0.1 1.4 1.4 0.5 1.2 2.2 7.3-0.6 3.3 0.8 3.8 5.6 2.3-0.7 4.1 0.3 3.2-0.7 2 1.1-1.2 3.4-1.3 2.2-0.6 4.6 1.1 4.3 1.5 1.9 0.2 1.4-2.9 3.2 2 1.4 1.5 2.3 1.6 6.4-1.1 0.8-1-3.8-1.6-2.1-1.9 2.3-11-0.2 0 4 3.3 0.7-0.2 2.5-1.1-0.7-3.2 1-0.1 4.7 2.6 2.4 0.9 3.6-0.1 2.8-2.2 17.6-2.9-3.4-1.7-0.1 3.5-6.6-4.4-3-3.4 0.6-2.1-1.1-3.1 1.7-4.2-0.9-3.5-6.7-2.6-1.6-1.8-3.1-3.8-3-1.5 0.6-2.4-1.5-2.8-2.1-1.6 1-4.8-0.9-1.4-2.8-1.1 0.1-5.6-3.6-0.7-2 2.1-0.5-0.2-3.2 1.4-2.4 2.8-0.4 2.5-4 2.2-3.4-2-1.5 1.2-3.7-1.1-5.9 1.3-1.7-0.7-5.4-2.2-3.5 0.9-3.1 1.8 0.5 1.1-1.9-1.1-3.8 0.7-0.9 2.9 0.2 4.5-4.5 2.4-0.7 0.1-2.1 1.4-5.5 3.4-2.9 3.5-0.2 0.6-1.3 4.4 0.5 4.6-3.2 2.3-1.4 2.9-3.1 2 0.4 1.3 1.7-1.2 2.1z" id="CO">
+							</path> 
+						</a>
+						<a onclick="Cuba()"> 
+							<path class="Cuba" d="M544.8 355.7l1.9 2.3 5.2-0.7 1.8 1.5 4.2 4 3.2 2.9 1.8-0.1 3.2 1.3-0.6 1.8 4 0.3 3.9 2.6-0.8 1.5-3.8 0.8-3.8 0.3-3.7-0.5-8.1 0.6 4.2-3.5-2.1-1.7-3.6-0.4-1.7-1.9-0.8-3.6-3.2 0.2-5-1.7-1.5-1.4-7.1-1-1.8-1.2 2.3-1.6-5.4-0.3-4.4 3.3-2.3 0.1-1 1.6-2.8 0.7-2.3-0.7 3.2-1.9 1.5-2.4 2.7-1.4 3-1.2 4.3-0.6 1.4-0.8 4.7 0.5 4.4 0.1 4.9 2.2z" id="CU">
+							</path> 
+						</a>
+						<a onclick="Chile()"> 
+							<path class="Chile" d="M 655.1 837.9 661.1 851.5 666.1 851.5 669.1 851.7 668.6 854.1 665.4 856 663 855.8 659.9 855.3 655.7 853.5 650.3 852.6 642.8 849.2 636.4 846 626.6 839.1 631.2 840.4 639.8 844.5 647.1 846.7 648.3 843.9 648 839.7 651.4 837.1 655.1 837.9 Z">
+							</path> 
+						</a>
+						<a onclick="Chile()"> 
+							<path class="Chile" d="M 614.4 647.8 615.3 649.4 614.1 656.1 608.5 659.2 610.1 669.9 609.3 672 611.3 674.5 608 678.5 605.4 684.5 604.5 690.4 606.2 696.6 604.1 703.2 609 714.3 610.6 715.5 612 721.4 610.4 727.6 611.8 733 608.8 737.2 610.4 743 613.7 749.3 611.2 751.6 611.4 757.3 612.2 763.8 615.5 771.6 613.8 772.9 617.5 780.2 620.6 782.6 619.8 785.3 622.6 786.5 624 788.9 622.2 790.1 624 793.8 625.1 802.1 624.4 807.5 626.2 810.7 626.1 814.6 623.4 817.4 626.5 823.9 629.1 826.2 632.2 825.8 634.1 830.4 637.6 834 649.7 834.8 654.6 835.8 650.3 835.8 648.6 837.3 645.2 839.5 646.9 845.2 645 845.3 638.7 843.4 631.2 839.1 623.6 835.6 620.4 831.7 620.1 828.1 615.9 823.9 610.9 813.3 610.7 807.3 614.1 802.5 605.8 800.6 608.5 795.1 606.5 784.6 613 786.8 611.2 773.7 607.2 772 608.2 779.9 604.7 779 603.2 770 601.2 758.2 602.3 753.8 599 747.6 596.6 740.4 598.8 740.1 599.4 729.8 600.6 719.5 600.7 710 597.4 700.3 598 695 595.9 687.1 597.7 679.3 596.8 666.9 596.8 653.5 596.9 639.2 595.4 628.7 593.3 619.6 596.1 618 597.2 614.7 600.4 619.1 601.6 623.7 604.8 626.4 603.7 632.6 607.4 639.8 610.5 648.7 614.4 647.8 Z">
+							</path> 
+						</a>
+						<a onclick="Mexico()"> 
+							<path class="Mexico" d="M449.3 335.9l2.2-0.2-3.2 5.7-1.8 4.6-1.8 8.6-1.1 3.1 0.4 3.5 1.3 3.2 0.4 4.9 3 4.8 0.8 3.7 1.7 3.1 5.7 1.7 1.9 2.7 5.2-1.8 4.3-0.6 4.4-1.2 3.6-1.1 3.9-2.6 1.8-3.7 1.2-5.4 1.2-1.9 4-1.7 6.1-1.5 4.9 0.3 3.4-0.6 1.2 1.4-0.6 3.1-3.5 3.8-1.8 3.9 0.9 1.1-1.2 2.8-2.1 5-1.2-1.7-1.1 0.1-1.1 0.1-2.5 3.9-0.9-0.8-0.7 0.3-0.1 1-5.2-0.1-5.2 0-0.5 3.6-2.5 0.1 1.8 2.1 1.9 1.5 0.5 1.4 0.8 0.4-0.4 2.2-7.2 0-3.3 5.2 0.7 1.2-0.8 1.5-0.4 1.9-5.6-6.9-2.6-2.1-4.4-1.7-3.2 0.5-4.8 2.4-2.9 0.6-3.7-1.7-4.1-1.2-4.8-2.9-4.1-0.9-5.9-3-4.3-3.1-1.1-1.7-3.1-0.4-5.4-2-1.9-2.9-5.4-3.7-2.2-4-0.8-3.2 1.9-0.6-0.3-1.8 1.6-1.7 0.4-2.2-1.5-2.9 0-2.5-1.3-3.3-3.8-6.4-4.6-5-1.9-4-4.1-2.6-0.7-1.6 1.7-3.9-2.4-1.5-2.5-3.2-0.2-4.4-2.8-0.6-2.3-3.3-1.7-3.2 0.3-2-1.5-4.8-0.3-4.9 0.8-2.5-3.1-2.6-1.9 0.3-2.4-1.7-1.8 2.6-0.1 3-1 4.9 1 2.6 2.8 4.4 0.4 1.6 0.7 0.4 0.1 2.2 1-0.1 0 4.2 1.3 1.6 0.5 2.3 2.7 3.2 0.4 6 1 2.8 0.9 3-0.3 3.4 2.6 0.2 1.6 2.9 1.5 2.9-0.3 1.2-2.8 2.3-1 0-0.7-3.9-2.9-3.7-3.4-3.1-2.5-1.6 1.2-4.7-0.1-3.5-2.1-2-3.1-2.8-0.9 0.8-1-1.7-3-1.5-2.2-3.8 0.5-0.4 2.1 0.3 2.7-2.4 1-2.9-2.9-4.6-2.6-1.7-0.8-4-0.6-4.3-0.8-5.1-0.2-5.8 6.3-0.5 7.1-0.7-0.9 1.3 7 3.1 10.9 4.5 10.8 0 4.3 0 0.8-2.7 9.4 0 1.3 2.3 2.1 2.1 2.4 2.8 0.8 3.3 0.4 3.6 2.3 1.9 4 1.9 4.8-5 4.5-0.2 3.2 2.6 1.6 4.4 0.9 3.8 2.4 3.6 0.2 4.5 0.9 3 3.9 2 3.6 1.4z" id="MX">
+							</path>
+						</a>
+
+
+
+
+
+						<a> 
+							<path class="Bolivia" d="M662.5 631.4l-0.3-2-5.4-3.3-5.2-0.1-9.6 1.9-2.1 5.6 0.2 3.5-1.5 7.7-1-1.4-6.4-0.3-1.6 5.2-3.7-4.6-7.5-1.6-4 5.8-3.9 0.9-3.1-8.9-3.7-7.2 1.1-6.2-3.2-2.7-1.2-4.6-3.2-4.4 2.9-6.9-2.9-5.4 1.1-2.2-1.2-2.4 1.9-3.2-0.3-5.4 0-4.6 1.1-2.1-5.5-10.4 4.2 0.6 2.9-0.2 1.1-1.9 4.8-2.6 2.9-2.4 7.3-1.1-0.4 4.8 0.9 2.5-0.3 4.3 6.5 5.7 6.4 1.1 2.3 2.4 3.9 1.3 2.5 1.8 3.5 0 3.4 1.9 0.5 3.7 1.2 1.9 0.3 2.7-1.7 0.1 2.8 7.5 10.7 0.3-0.5 3.7 0.8 2.5 3.2 1.8 1.7 4-0.6 5.1-1.3 2.8 0.8 3.6-1.6 1.4z" id="BO">
+							</path> 
+						</a>
+
+						<a> 
+							<path class="Paraguay" d="M662.5 631.4l2 3.5 0.4 8.7 5.9 1.3 2.2-1.3 3.9 1.8 1.2 1.9 1.1 5.9 0.8 2.4 2.1 0.3 2-1 2.1 1.1 0.3 3.6-0.3 3.8-0.7 3.7-0.3 5.6-4.3 5-4.2 1-6.3-1-5.8-1.7 4.2-9.8-1.1-2.8-5.9-2.5-7.3-4.8-4.6-1-11.3-10.4 1.5-7.7-0.2-3.5 2.1-5.6 9.6-1.9 5.2 0.1 5.4 3.3 0.3 2z" id="PY"></path>
+						</a>
+						<a> 
+							<path class="Costa-Rica" d="M514.6 431.6l1.2 3.5 2 2.6 2.5 2.7-2.2 0.6-0.1 2.6 1.1 0.9-0.9 0.8 0.2 1.1-0.6 1.3-0.3 1.3-3-1.4-1.1-1.4 0.7-1.1-0.1-1.4-1.5-1.5-2.2-1.3-1.8-0.8-0.3-1.9-1.4-1.1 0.2 1.8-1.2 1.6-1.2-1.8-1.7-0.7-0.7-1.2 0.1-2 0.9-2-1.5-0.9 1.4-1.3 0.9-0.8 3.6 1.7 1.3-0.8 1.8 0.5 0.8 1.3 1.7 0.5 1.4-1.4z" id="CR">
+							</path> 
+						</a>					
+
+						<a> <path class="Dominican-Republic" d="M585.7 386l0.3-1.8-1.3-1.9 1.5-1.1 0.7-2.5-0.1-3.4 0.8-1.1 4.3 0 3.2 1.6 1.5-0.1 0.7 2.3 3.1-0.2-0.4 1.9 2.5 0.3 2.5 2.3-2.3 2.6-2.6-1.4-2.6 0.3-1.8-0.3-1.1 1.2-2.2 0.4-0.7-1.6-1.9 0.9-2.7 4.4-1.3-1-0.1-1.8z" id="DO">
+						</path> </a>
+
+
+						<a> <path class="Ecuador" d="M559 502.8l0.8 4.9-1.7 4.1-6.1 6.8-6.7 2.5-3.4 5.6-0.9 4.3-3.1 2.7-2.5-3.3-2.3-0.7-2.3 0.5-0.3-2.3 1.6-1.5-0.7-2.7 2.9-4.8-1.3-2.8-2.1 3-3.5-2.9 1.1-1.8-1-5.8 2-1 1-4 2.1-4.1-0.3-2.6 3.1-1.4 3.9-2.5 5.6 3.6 1.1-0.1 1.4 2.8 4.8 0.9 1.6-1 2.8 2.1 2.4 1.5z" id="EC">
+						</path> </a>
+
+
+						<a> <path class="Guatemala" d="M488.1 387.5l-0.7 5.1-1.3 7.2 1.7 0 1.7 1.2 0.6-1 1.5 0.8-2.8 2.5-2.9 1.8-0.5 1.2 0.3 1.3-1.3 1.6-1.4 0.4 0.3 0.8-1.2 0.7-2 1.6-0.3 0.9-2.8-1.1-3.5-0.1-2.4-1.3-2.8-2.6 0.4-1.9 0.8-1.5-0.7-1.2 3.3-5.2 7.2 0 0.4-2.2-0.8-0.4-0.5-1.4-1.9-1.5-1.8-2.1 2.5-0.1 0.5-3.6 5.2 0 5.2 0.1z" id="GT">
+						</path> </a>
+
+
+						<a> <path class="Guyana" d="M662.9 463.5l-1 5.8-3.5 1.6 0.3 1.5-1.1 3.4 2.4 4.6 1.8 0 0.7 3.6 3.3 5.6-1.3 0.3-3.2-0.6-1.8 1.7-2.6 1.1-1.8 0.3-0.6 1.3-2.8-0.3-3.5-3-0.3-3-1.4-3.3 1-5.4 1.6-2.3-1.2-3-2-0.9 0.8-2.9-1.2-1.4-3 0.2-3.7-4.8 1.6-1.8 0-3 3.5-1 1.4-1.2-1.8-2.4 0.5-2.3 4.7-3.8 3.6 2.4 3.3 4.1 0.1 3.4 2.1 0.1 3 3.1 2.1 2.3z" id="GY">
+						</path> </a>
+
+
+						<a> <path class="Haiti" d="M586.8 375.3l0.1 3.4-0.7 2.5-1.5 1.1 1.3 1.9-0.3 1.8-3.6-1.1-2.7 0.4-3.4-0.4-2.7 1.2-2.8-2 0.7-2.1 5.1 0.9 4.1 0.5 2.2-1.4-2.3-2.8 0.4-2.5-3.5-1 1.5-1.7 3.4 0.2 4.7 1.1z" id="HT">
+						</path> </a>
+
+						<a> <path class="Nicaragua" d="M519.6 405.5l-0.5 0.7-0.5 1.4 0.4 2.3-1.5 2.2-0.8 2.6-0.5 2.8 0.2 1.7-0.1 2.9-0.9 0.6-0.7 2.8 0.2 1.7-1.2 1.6 0.1 1.7 0.8 1.1-1.4 1.4-1.7-0.5-0.8-1.3-1.8-0.5-1.3 0.8-3.6-1.7-0.9 0.8-1.8-2-2.5-2.6-1.1-2.1-2.2-2.1-2.5-2.9 0.7-1 0.8 1 0.5-0.4 1.8-0.3 0.8-1.5 0.8 0 0.2-3.2 1.3-0.1 1.2 0 1.4-1.7 1.5 1.3 0.6-0.8 1.2-0.8 2.1-1.7 0.2-1.4 0.5 0.1 0.9-1.5 0.6-0.2 0.9 1 1.1 0.2 1.3-0.8 1.4 0 2-0.8 0.9-0.9 1.9 0.1z" id="NI">
+						</path> </a>
+
+						<a> <path class="Panama" d="M549.3 446.2l-0.7 0.9 1.1 3.8-1.1 1.9-1.8-0.5-0.9 3.1-1.8-1.8-1-3.5 1.4-1.7-1.4-0.4-0.9-2.1-2.8-1.8-2.4 0.4-1.3 2.2-2.4 1.6-1.2 0.2-0.6 1.4 2.5 3.5-1.6 0.8-0.8 0.9-2.7 0.4-0.8-3.9-0.8 1.1-1.8-0.4-1-2.5-2.3-0.5-1.5-0.7-2.4 0-0.2 1.4-0.6-1 0.3-1.3 0.6-1.3-0.2-1.1 0.9-0.8-1.1-0.9 0.1-2.6 2.2-0.6 1.9 2.3-0.2 1.4 2.2 0.3 0.6-0.6 1.5 1.6 2.8-0.5 2.5-1.6 3.5-1.3 2-1.9 3.1 0.4-0.2 0.6 3.1 0.2 2.4 1.2 1.8 1.9 2 1.8z" id="PA">
+						</path> </a>
+
+						<a> <path class="Peru" d="M590.5 529.4l-5.1-0.3-0.8 1-4.6 1.2-6.3 4.4-0.3 3-1.4 2.2 0.7 3.5-3.4 1.8 0.2 2.8-1.5 1.1 2.6 5.8 3.3 3.9-1 2.8 3.8 0.3 2.3 3.5 5 0.1 4.4-3.7 0.1 9.7 2.6 0.7 3.2-1.1 5.5 10.4-1.1 2.1 0 4.6 0.3 5.4-1.9 3.2 1.2 2.4-1.1 2.2 2.9 5.4-2.9 6.9-1.1 3.3-2.8 1.6-5.9-3.7-0.8-2.6-11.7-6.4-10.7-7.1-4.7-3.9-2.8-5.3 0.8-1.9-5.4-8.4-6.4-11.8-6-12.8-2.4-3-2-4.7-4.6-4.2-4.1-2.6 1.7-2.8-3-6.2 1.7-4.5 4.4-4 0.7 2.7-1.6 1.5 0.3 2.3 2.3-0.5 2.3 0.7 2.5 3.3 3.1-2.7 0.9-4.3 3.4-5.6 6.7-2.5 6.1-6.8 1.7-4.1-0.8-4.9 1.5-0.6 3.8 3 1.8 3.1 2.6 1.6 3.5 6.7 4.2 0.9 3.1-1.7 2.1 1.1 3.4-0.6 4.4 3-3.5 6.6 1.7 0.1 2.9 3.4z" id="PE">
+						</path> </a>
+
+						<a> <path class="El-Salvador" d="M492.5 415.9l-0.7 1.5-3.3-0.1-2-0.6-2.2-1.3-3-0.4-1.5-1.4 0.3-0.9 2-1.6 1.2-0.7-0.3-0.8 1.4-0.4 1.6 0.6 1.1 1.2 1.6 1.1 0.1 0.8 2.5-0.7 1.2 0.4 0.7 0.7-0.7 2.6z" id="SV">
+						</path> </a>
+
+
+						<a> <path class="Suriname" d="M681 464.9l-3.1 5.5 0.3 4.4 2.2 3.8-1.1 2.7-0.5 3-1.5 2.7-3.2-1.4-2.7 0.7-2.3-0.6-0.6 1.9 1 1.2-0.6 1.4-3.1-0.6-3.3-5.6-0.7-3.6-1.8 0-2.4-4.6 1.1-3.4-0.3-1.5 3.5-1.6 1-5.8 6.8 1.3 0.6-1.2 4.6-0.5 6.1 1.8z" id="SR">
+						</path> </a>
+
+
+						<a> <path class="Uruguay" d="M699.7 718.6l-1.6 4.1-5.4 3.5-4.2-1.3-2.8 0.7-5.5-2.7-3.6 0.2-3.9-3.6-0.4-4.1 0.9-1.4-1.2-6.4 0.4-6.6 0.5-5.2 3.4-0.7 6.3 5 1.9-0.2 6.3 4.1 4.8 3.6 3.8 4.3-1.8 3.1 2.1 3.6z" id="UY">
+						</path> </a>
+
+
+						<a> <path class="Venezuela" d="M648.7 448.1l-4.7 3.8-0.5 2.3 1.8 2.4-1.4 1.2-3.5 1 0 3-1.6 1.8 3.7 4.8 0.7 1.8-2.1 2.5-6.4 2.4-4.1 1-1.7 1.5-4.5-1.6-4.1-0.8-1.1 0.6 2.5 1.6-0.3 4.3 0.7 4.1 4.8 0.5 0.3 1.4-4.1 1.8-0.7 2.7-2.4 1.1-4.2 1.5-1.1 2-4.4 0.4-3.1-3.4-1.6-6.4-1.5-2.3-2-1.4 2.9-3.2-0.2-1.4-1.5-1.9-1.1-4.3 0.6-4.6 1.3-2.2 1.2-3.4-2-1.1-3.2 0.7-4.1-0.3-2.3 0.7-3.8-5.6-3.3-0.8-7.3 0.6-1.2-2.2-1.4-0.5-0.1-1.4 0.7-2.4-0.3-2.5-1.2-1.5-0.6-2.9-2.9-0.4 1.8-3.8 0.9-4.6 1.8-2.4 2.3-1.8 1.6-3.2 3.7-1.1-0.2 1.5-3.4 0.8 1.7 2.9-0.3 3.4-2.7 3.7 1.9 5.1 2.5-0.4 1.5-4.7-1.7-2.2 0-4.9 7.2-2.6-0.6-3 2.1-2.1 1.7 4.6 4 0.1 3.4 3.5 0.2 2.2 5 0 6.1-0.6 3.1 2.8 4.2 0.8 3.3-2 0.1-1.6 7.1-0.4 6.7-0.1-4.9 1.9 1.8 3.1 4.5 0.4 4.2 3.2 0.7 5.1 2.9-0.1 2.2 1.5z" id="VE">
+						</path> </a>
+
+						<a> <path class="French-Guiana" d="M677.3 487l1.5-2.8 0.5-2.9 1-2.7-2.1-3.8-0.3-4.4 3.1-5.5 1.9 0.7 4.1 1.5 5.9 5.4 0.8 2.6-3.4 5.9-1.8 4.7-2.2 2.5-2.7 0.4-0.8-1.8-1.3-0.2-1.7 1.7-2.5-1.3z" id="GF">
+						</path> </a>
+
+
+						<a> <path class="Antigua-and-Barbuda" d="M 640.7 391.9 641.3 392.2 641.1 392.5 640.9 392.5 640.2 392.6 640 392.5 640 392 640.3 391.9 640.4 391.6 640.6 391.6 640.7 391.9 Z">
+						</path> </a>
+						<a> <path class="Antigua-and-Barbuda" d="M 640.7 388.2 640.9 388.2 641.1 388.4 641.2 388.8 641.1 389.1 640.9 389.2 640.8 389 640.5 388.8 640.5 388.3 640.7 388.2 Z">
+						</path> </a>
+
+
+						<a> <path class="Bahamas" d="M 580.4 366 580 366.5 579.8 367 579.2 367.3 578.7 367.3 578.6 367.2 578.2 367.4 577.7 367.5 577.1 367.3 576.7 367.4 576.6 366.9 576.9 366.7 577.1 366.4 577.5 366.2 577.8 365.8 578.2 365.8 578.5 365.6 578.7 365.9 579.2 366.1 579.7 365.9 580.4 364.9 580.7 364.9 580.7 365.1 580.4 366 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 580.6 364.3 580.4 363.7 581 363.4 581.3 363.7 581.3 363.9 581 364 580.6 364.3 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 581 357.8 581.2 357.7 581.7 358 582.1 358 582.5 358.1 582.8 358.3 582.8 358.6 582.6 358.7 582.1 358.3 581.7 358.3 581.6 358.2 581.1 358.4 580.6 358.2 580.6 358.1 580.8 357.6 581 357.8 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 577.1 356 576.9 356.4 576.9 357.1 576.8 357.5 576.4 357.8 576.2 358.2 575.8 358.5 575.1 358.8 575 359 574.8 358.8 574.9 358.6 575.3 358.5 575.5 358.3 575.5 358.1 575.9 358 576.1 357.6 576.5 357.5 576.8 357.1 576.6 356.8 576.2 356.8 576 356.6 576.4 356.1 576.5 356 577.1 356 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 575.2 355.7 575.3 355.8 575.7 355.8 576.1 356 575.7 356.4 575.6 356.2 575.4 356.2 575 356.1 574.6 355.9 574.3 355.3 574.6 355.2 575 355.3 575.2 355.7 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 566 349.8 566.6 350.5 566.9 350.7 567.2 351.2 566.9 351.1 566.8 350.9 566.5 350.8 566.1 350.4 565.9 350.3 565.7 349.9 566 349.8 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 569.7 349.8 570 350.4 570.2 350.9 570.2 351.3 570.4 351.5 570.6 352.2 570.6 353.1 570.8 353.4 571.3 353.6 571.7 354.2 571.7 355 571.3 354.3 571.3 354.1 571 353.7 570.4 353.5 570.6 353.3 570.3 353 570.3 352.7 570.5 352.4 570.4 351.9 570.1 351.5 570.2 351.4 569.9 351 569.8 350.4 569.6 350.5 569.7 349.8 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 572.6 349.8 572.3 350 572 349.9 571.9 349.7 572.5 349.5 572.6 349.8 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 564.4 347.9 564.3 347.8 564 347.1 564.2 347.1 564.4 347.9 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 574.9 347.4 574.5 348 574.1 348 574.3 347.7 574.4 347.1 574.8 346.8 574.9 347.2 574.9 347.4 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 556.4 346.2 556.1 346.3 555.9 346.6 555.6 346.5 556.2 346.1 556.4 346.2 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 556.6 346.9 557 347.1 557.2 346.9 557.3 346.4 557.5 346.3 557.7 346.9 557.7 347.4 557.6 347.7 557.7 348.3 557.7 348.6 557.3 349.4 557.1 349.5 556.7 349.3 556.9 349 557.3 348.8 557.2 348.7 556.6 349.1 556.4 348.9 556.8 348.6 556.4 348.6 556.2 348.7 556 348.5 556 347.8 556.1 347.6 555.7 347.1 555.7 346.9 556.1 346.7 556.2 346.4 556.5 346.3 556.6 346.1 557.2 345.8 557.3 346.2 556.8 346.6 556.6 346.9 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 570.1 346.3 570.2 346.8 570 346.7 569.5 346.8 569.1 346.9 569 346.7 569.3 346.5 569.7 346.2 569.7 346 569.3 345.8 569.1 345.2 569 344.6 568.6 344.2 568.6 344 568.1 343.5 568.4 343.2 568.8 343.6 568.8 344.1 569 344.4 569.1 344.9 569.4 345.4 569.8 345.7 569.9 346 570.1 346.3 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 559.8 340.8 560.1 341 559.5 341.3 559.2 341.2 559 341.4 558.5 341.3 558.7 341 559.1 340.8 559.8 340.8 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 555.6 340.3 556 340.1 556.3 340.4 556.2 340.6 556.3 340.8 556.1 341.2 556.4 341.5 556.6 342.4 556.8 342.7 557.2 343.2 557 343.9 557.1 344.5 556.9 344.8 556.6 344.9 556.2 345.3 555.9 345.5 555.6 345.5 555.3 345.7 555 345.7 555 345.3 554.7 345.1 554.8 344.5 554.5 344.8 554.3 344.7 553.7 344.3 553.4 344 553.2 343.7 553.9 343.4 554.4 344.1 554.5 343.5 554.2 343.4 554.1 343.1 554.2 342.8 554.8 342.2 555 341.8 554.9 341.7 555.2 341.3 555.2 340.8 555 340.1 555.1 340 555.4 340 555.6 340.3 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 563.7 337.7 563.8 337.9 564.1 338.3 564.9 339 565.4 339.1 565.5 339.2 565.7 339.6 566 340 566.5 340.4 566.5 340.6 566.3 341.4 566.2 341.6 566.2 341.9 566.1 342.4 565.9 342.7 565.8 343.4 565.7 343.5 565.5 342.9 565.1 342.6 565.2 342.4 565.7 342.5 565.9 342.3 565.8 342.1 565.9 341.7 566.2 341.3 566.3 340.8 566.3 340.5 565.8 340.1 565.4 339.4 565.1 339.2 564.5 338.9 564.2 338.6 563.6 338.4 563.2 338.6 563.6 337.7 563.7 337.7 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 554.9 330.2 555.4 330.4 555.5 330.4 556.2 330.5 556.4 330.3 556.6 330.4 557.1 330.4 557.5 330.2 557.9 330.2 558.2 330 558.3 330.5 558.2 330.7 557.9 330.7 557.5 330.7 556.4 330.9 556.1 330.9 554.6 331.3 553.9 331.7 553.5 331.7 553.3 331.6 553 331.3 552.5 330.7 553.1 331 553.2 331.2 553.7 331.2 554.2 331 554.6 330.4 554.3 330.3 554.5 330 554.6 329.7 554.9 330.2 Z">
+						</path> </a>
+						<a> <path class="Bahamas" d="M 559.2 328.9 560 329.1 560.2 329 560.6 329.3 561.5 330.3 561.7 330.9 562.1 331 562.8 331.5 562.8 331.7 562.6 332.2 562.8 332.9 562.4 332.9 561.9 333.3 561.8 333.5 561.5 334.5 561.4 335.4 561.2 335.6 560.9 335.4 560.8 335 560.4 334.9 560.7 334.4 560.9 334.4 561.4 334 561.3 333.6 561.5 333.2 561.5 332.9 561.7 332.6 561.7 332 561.9 331.9 562.1 331.6 562.2 331.3 561.9 331.2 561.4 331.1 561.3 330.8 561.3 330.6 560.9 330.4 560.9 330.1 560.6 329.4 560.4 329.3 560.1 329.4 559.6 329.3 559.3 329.3 558.7 328.9 559.2 328.9 Z">
+						</path> </a>
+
+
+						<a> <path class="Barbados" d="M651.5 418l-0.6-0.2-0.1-0.5 0-0.8 0.2-0.4 0.2 0.2 0.2 0.6 0.5 0.3 0.1 0.4-0.5 0.4z" id="BB">
+						</path> </a>
+
+
+						<a> <path class="Curaçao" d="M599 424.5l-0.3 0-0.4-0.3-0.3-0.1-0.3-0.3-0.1-0.2-0.3-0.1-0.2-0.4-0.3-0.3 0.1-0.5 0.5 0.3 0.1 0.5 0.4 0.4 0.7 0.2 0.2 0.3 0.3 0.4-0.1 0.1z" id="CW">
+						</path> </a>
+
+
+						<a> <path class="Dominica" d="M642 401.7l0.5 0.1 0.2 0.5 0 0.6-0.1 0.8-0.1 0.2-0.2 0.1-0.4 0.2 0.1-0.4-0.1-0.2-0.1-0.7-0.3-0.5 0-0.3 0.1-0.3 0-0.3 0.2 0 0.2 0.2z" id="DM">
+						</path> </a>
+
+
+						<a> <path class="Falkland-Islands" d="M 697.4 836.2 697.8 836.1 697.8 836.5 697 836.2 697.3 835.9 697.5 835.8 697.4 836.2 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 696.7 834.8 696.9 835 697.3 835.1 697.4 835.5 697.1 835.6 697 835.2 696.8 835 696.7 834.8 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 702.9 834 703.1 834.1 703 834.5 702.7 834.4 702.5 834.1 702.8 833.9 702.9 834 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 690.8 833.1 690.8 833.3 690.9 833.6 690.5 833.7 690.2 833.6 690 833.4 689.7 833.3 689.6 832.9 689.8 832.9 689.9 832.7 690.2 832.6 690.4 832.7 690.1 833 690.4 833.1 690.7 832.8 690.8 833.1 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 693.7 831.8 693.3 831.6 692.8 831.3 692 831 692.1 830.6 691.4 830.5 691.1 830.4 690.8 830 691 829.9 691.8 830.2 692.6 830.6 693.1 830.7 693.5 830.8 693.8 830.5 693.9 830.2 694.1 830.3 694.5 830.1 694.6 830.3 695.1 830.3 695.1 830.6 695.4 830.6 696.3 830.4 696.4 830.6 696.7 830.6 697.1 830.5 696.8 830.3 696.7 830 697.1 830 697.7 830.2 697.8 830.6 697.4 831.1 697.5 831.4 697.3 831.6 696.9 831.6 696.6 832.4 696.3 832.7 696 833.3 695.9 833.6 695.4 833.9 695.3 833.7 694.9 833.7 694.9 834 694.1 833.9 694 834 694.3 834.4 694.2 834.5 694 834.9 693.6 834.9 693.3 835.3 693 835.4 692.8 835.4 692.6 835.1 692.2 834.8 692.2 834.6 691.7 834.6 692.3 835 691.9 835 691.4 834.7 691.2 834.6 690.8 834.4 690.5 834.2 690.5 834 691.2 834.2 691.8 834 691.3 833.8 691.2 833.7 692.1 833.7 692.5 833.8 692.8 834 692.8 833.8 693.2 833.7 693.3 833.4 692.9 833.2 692.7 832.7 692.8 832.5 693.4 832.5 693.6 832.6 694 832.5 693.9 832.2 693.1 832.2 693.1 832.3 692.7 832.5 692.1 832.5 691.6 832.2 691.6 831.9 692.3 832.1 692.9 831.9 693.2 831.9 693.7 831.8 694.1 832 694.1 831.9 693.7 831.8 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 695.3 829.9 695.6 829.9 695.9 830.2 695.6 830.3 695.3 830.3 695.3 829.9 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 694.3 829.9 694 829.9 693.9 829.6 694.3 829.7 694.3 829.9 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 692.9 829.7 693.5 829.6 693.7 829.9 693.4 830.3 693.2 830.2 692.9 830.3 692.6 830.1 692.9 829.9 693.2 830.1 693.3 829.9 692.8 829.8 692.9 829.7 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 700.1 829.8 700.7 829.8 700.8 829.7 701.3 829.6 701.7 829.8 702.1 830.1 702.2 830.4 702.2 830.5 701.7 830.6 701.5 830.3 701.3 830.2 701.2 830.5 701.4 830.6 701.5 830.9 701.8 830.7 702 830.8 702.1 831.2 702.4 831.3 702.5 831.2 703 831.5 703.1 831.1 702.3 830.9 702.4 830.4 702.7 830.2 704.2 830.1 704.9 830.7 705.1 830.8 705.1 831.2 704.5 831.1 704 830.9 703.4 831.1 703.7 831.3 704.1 831.4 705 831.5 705.3 831.6 705.4 831.8 705.2 832.3 704.7 832.3 704.6 832.4 703.9 832.5 703.4 832.7 703.7 832.9 702.8 833.3 702.4 833.2 701.9 833.3 701.2 833.3 700.6 833.1 700 832.7 700 833 700.3 833.2 700.9 833.4 701.2 833.7 701.4 833.6 701.8 833.7 702.2 834 702 834.1 702.2 834.6 702 834.6 701.7 834.3 701.3 834.2 700.8 834.6 700.6 834.3 700.3 834.1 700 834.1 699.5 833.9 699.3 834 699.5 834.4 699.8 834.4 700 834.6 699.8 834.7 700.5 835.3 700.3 835.4 699.9 835.2 699.6 835.2 699.3 834.9 699 834.8 698.7 834.7 698.6 835.3 699.1 835.4 699.1 835.7 699 835.9 698.6 835.8 698.5 835.6 698 835.4 697.9 835.2 697.7 835.2 697.3 834.7 697.6 834.3 697.6 834.1 697.2 833.6 697.2 833.4 697.7 833.2 697.6 833 698.1 832.9 698 832.6 698.6 832.2 699.2 832 699.6 832.4 699.6 832.8 699.9 832.7 699.4 832.1 699.5 831.8 698.9 831.6 698.5 831.3 698.6 831.1 699 831.3 699.1 830.8 698.4 830.6 698.5 830.3 698.7 830.4 699 830.2 699.3 830.2 699.5 829.9 699.2 829.6 699.6 829.6 700.1 829.8 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 695.1 829.4 695.8 829.4 696 829.6 696.2 829.4 696.4 829.5 696.6 829.8 696.4 829.9 696 829.8 695.6 829.6 694.8 829.5 694.9 829.3 695.1 829.4 Z">
+						</path> </a>
+						<a> <path class="Falkland-Islands" d="M 688.3 828.3 687.8 828.2 687.9 828 688.3 828.3 Z">
+						</path> </a>
+
+
+						<a> <path class="Grenada" d="M639.2 424.5l-0.4 0.3-0.2-0.1-0.1-0.5 0.2-0.5 0.3-0.4 0.3 0 0.1 0.3-0.1 0.7-0.1 0.2z" id="GD">
+						</path> </a>
+
+
+						<a> <path class="Saint-Kitts-and-Nevis" d="M 636.3 392 636 392 635.9 391.8 636.1 391.4 636.3 391.4 636.4 391.6 636.3 392 Z">
+						</path> </a>
+						<a> <path class="Saint-Kitts-and-Nevis" d="M 635.6 390.5 635.5 390.8 635.3 390.8 634.9 390.6 634.7 390.4 635 390 635.5 390.4 635.6 390.5 Z">
+						</path> </a>
+
+
+						<a> <path class="Saint-Lucia" d="M643.7 413.8l-0.2-0.2-0.4-0.2-0.1-0.2 0-0.6 0.1-0.2 0.7-1.1 0.3 0.2 0 0.7-0.1 0.8-0.1 0.4-0.2 0.4z" id="LC">
+						</path> </a>
+
+
+						<a> <path class="Saint-Martin" d="M634.2 386l-0.4-0.1 0.2-0.3 0.3-0.1-0.1 0.5z" id="MF">
+						</path> </a>
+
+
+						<a> <path class="Maldives" d="M1402.9 474.8l0 0.2-0.2-0.1 0.2-0.2 0 0.1z" id="MV">
+						</path> </a>
+
+
+						<a> <path class="Puerto-Rico" d="M 607.1 385.9 606.8 385.7 606.9 385.5 607.2 385.5 607.3 385.6 607.1 385.9 Z">
+						</path> </a>
+						<a> <path class="Puerto-Rico" d="M 621.7 385.4 621.5 385.4 620.6 385.7 620 385.7 620.2 385.5 620.6 385.3 621 385.2 621.6 385.3 621.7 385.4 Z">
+						</path> </a>
+						<a> <path class="Puerto-Rico" d="M 612.2 383 612.8 383.1 613.4 383.1 613.7 383.2 614.3 383.1 614.6 383.2 615 383.1 615.2 383.2 615.7 383.1 616.1 383.2 616.4 383.2 617.2 383.4 617.2 383.2 617.8 383.4 617.9 383.3 618.7 383.4 618.9 383.6 619.1 383.6 619.7 383.9 619.9 383.8 619.8 384.5 620 384.8 619.1 385.1 618.8 385.5 618.5 386.1 618.2 386.3 617.9 386.4 617.5 386.4 616.9 386.5 616.6 386.7 615.9 386.6 615.7 386.4 615.2 386.6 614.9 386.3 614.2 386.5 613.3 386.4 613 386.5 612.4 386.6 612.2 386.7 612 386.5 611.6 386.4 611.3 386.6 610.7 386.5 611 385.8 611 385.4 611.2 385 611 384.4 610.8 384.3 610.7 383.9 611.1 383.7 611.3 383.6 611.3 383.1 611.7 382.9 612.2 383 Z">
+						</path> </a>
+
+
+						<a> <path class="Trinidad-and-Tobago" d="M 642.8 432.2 642.6 432.7 642.3 433.1 642.1 433.2 642 433.6 642.2 434.2 642 434.3 642 435 642.2 435.3 642.4 435.5 642.2 435.7 642.1 436 642.1 436.7 641.9 436.8 641.5 437 641 437.1 640.7 437.1 640.2 437.2 639.7 437.1 639.3 437.2 639 437.1 638.5 437.3 638.1 437.1 637.5 437.1 637.2 437.3 636.9 437.2 637.4 437 637.7 436.7 638.1 436.6 638.5 436.3 638.7 436 639.3 436.1 639.6 435.7 639.4 434.9 639.6 434.5 639.6 434 639.6 433.8 639.3 433.4 639 433.3 638.6 433.2 638.5 433.1 638.9 432.8 640 432.7 640.2 432.5 641.3 432.5 641.4 432.4 642.6 432.2 642.8 432.2 Z">
+						</path> </a>
+						<a> <path class="Trinidad-and-Tobago" d="M 645.2 429 645.1 429.5 644.8 429.6 644.4 429.9 644.2 429.9 643.5 430.3 643.3 430.1 643.6 429.8 644.3 429.3 645.2 429 Z">
+						</path> </a>
+
+
+						<a> <path class="Saint-Vincent-and-the-Grenadines" d="M642.2 417.4l-0.1 0.1-0.5-0.3 0-0.4 0.2-0.3 0.2-0.5 0.4 0 0.1 0.4-0.1 0.8-0.2 0.2z" id="VC">
+						</path> </a>
+
+
+						<a> <path class="British-Virgin-Islands" d="M626.1 383.4l-0.4 0.2-0.1 0-0.3 0.2-0.1-0.1 0.1-0.3 0.6-0.1 0.2 0.1z" id="VG">
+						</path> </a>
+
+
+						<a> <path class="United-States-Virgin-Islands" d="M 624.5 387.8 624.8 388.1 623.7 388.3 623.6 387.8 624.3 387.6 624.5 387.8 Z">
+						</path> </a>
+						<a> <path class="United-States-Virgin-Islands" d="M 625.2 384 625 384.2 624.5 384.2 624.5 384 624.8 383.9 625.2 384 Z">
+						</path> </a>
+						<a> <path class="United-States-Virgin-Islands" d="M 623.8 383.8 624.2 384.1 624 384.3 623.7 384.1 623.2 384.1 623.4 383.9 623.8 383.8 Z">
+						</path> </a>
+
+
+						<a> <path class="Martinique" d="M644 406.9l0 0.2 0.4-0.1-0.2 0.5 0.2 0.2 0 0.2 0.2 0.2 0.2 0.9-0.3 0.3-0.1-0.4-0.1 0.1-0.6-0.1-0.4 0-0.2-0.3 0.6-0.5-0.4 0-0.4-0.4-0.1-0.5-0.2-0.5 0.3-0.4 0.4 0.1 0.5 0.3 0.2 0.2z" id="MQ">
+						</path> </a>
+
+
+						<a> <path class="Guadeloupe" d="M 643 399.9 642.7 399.9 642.5 399.5 642.6 399.3 642.9 399 643.2 399.2 643.3 399.5 643.3 399.7 643 399.9 Z">
+						</path> </a>
+						<a> <path class="Guadeloupe" d="M 641.2 397.3 641.5 397.3 641.5 397.5 641.5 397.6 641.3 397.7 641.3 398.5 641.3 398.9 641.1 399.1 640.5 399.4 640.5 399.2 640.3 399 640.2 398.5 640.2 398 640.1 397.5 640.1 397.2 640.3 396.9 640.6 396.8 641.1 397.1 641.2 397.3 Z">
+						</path> </a>
+						<a> <path class="Guadeloupe" d="M 642.6 396.9 643 397 643.5 397.4 642.2 397.7 641.9 397.8 641.5 397.5 641.6 396.9 641.8 396.8 641.7 396.2 641.8 396 642.1 395.8 642.4 396.2 642.4 396.6 642.6 396.9 Z">
+						</path> </a>
+
+
+						<circle cx="997.9" cy="189.1" id="0">
+						</circle>
+						<circle cx="673.5" cy="724.1" id="1">
+						</circle>
+						<circle cx="1798.2" cy="719.3" id="2">
+						</circle>
+					</svg>
+				</div>
+			</div>	
+<!--mapa-fim-->
+	
+	<div class="resumo">
+		<p class="titulo-1-2" id="ar">EArte Argentina</p>
+		<p class="titulo-5-1">El EArte-Ar se conforma por 14 a 18 integrantes, entre los que se encuentran investigadores e investigadoras, becarixs doctorales, tesistas doctorales, becarios de grado, con pertenencia a diferentes universidades del país: Universidad Nacional de Hurlingham (donde se aloja el proyecto), Universidad Nacional de Santiago del Estero (con investigadores del INDES - CONICET-UNSE-), Universidad Nacional de Córdoba, Universidad Nacional de Villa María (con al menos una de las investigadoras de UNVM-CONICET), Universidad Católica de Córdoba, Universidad Nacional de Mar del Plata (con una investigadora de IIMyC, CONICET-UNMDP), Universidad Nacional de General Sarmiento, Universidad de la Patagonia San Juan Bosco, Universidad Nacional de Tres de Febrero, y Universidad Nacional de Salta. Hasta la actualidad el EArte-Ar se ha financiado a través de tres proyectos: (i) La educación ambiental en la agenda de las universidades argentinas. Análisis de las tesis de posgrados: corrientes y tendencias teórico-metodológicas, con énfasis en la región del noroeste argentino (PI-UNSE 2020-2021). (ii) La Educación Ambiental (EA) en la agenda de las universidades argentinas. Temas y tendencias teórico-metodológicas en tesis de posgrados, con énfasis en la región del AMBA. (Pi-UNAHUR 2021-2023) Y (iii) La Educación Ambiental (EA) en la agenda de los y las investigadoras de las universidades argentinas como insumo para el diseño y la implementación de políticas públicas. Temas y tendencias teórico-metodológicas en tesis de maestrías y doctorados (PI-UNAHUR 2023-2025).</p>
+		
+		<p class="titulo-1-2" id="br">EArte Brasil</p>
+		<p class="titulo-5-1">Actualmente, EArte Brasil cuenta con 39 integrantes de 8 universidades: Universidade Federal Fluminense, Universidade Federal do Paraná, Universidade Federal do Triângulo Mineiro, Universidade Estadual Paulista, Universidade de Campinas, Universidade Federal de Itajubá, Universidade de São Paulo y Universidade do Estado de Minas Gerais. El proyecto recibió financiamiento del Conselho Nacional de Desenvolvimento Científico e Tecnológico – CNPq (2010–2012 y 2012-2016), Fundação de Amparo à Pesquisa do Estado de São Paulo – FAPESP (2020-2022) y Fundação de Amparo à Pesquisa do Estado de Minas Gerais - FAPEMIG (2023-2026). Brasil es un país de referencia en la materia, posee una iniciativa que data desde 2006. Sin embargo, fue en el año 2008 que el proyecto tomó la denominación de Proyecto EArte. El trabajo sostenido arrojó como resultado la sistematización en un Banco de Tesis de Maestrías y Doctorado en Educación Ambiental con 6142 trabajos de investigación desarrollados en varios programas de posgrado en todo el país de 1981 a 2020.</p>
+
+		<p class="titulo-1-2" id="ch">EArte Chile</p>
+		<p class="titulo-5-1">Chile viene desarrollando el capítulo de su país, desde la Universidad de los Lagos. En la actualidad se está llevando adelante un proyecto de investigación (hasta el momento sin financiamiento) que tiene por objetivo analizar la influencia del Pensamiento Ambiental Latinoamericano (PAL) en la investigación de postgrado de ese país. Desde el proyecto se proponen: (i) recopilar las tesis maestría y doctorado en Educación Ambiental de la base de datos EArte ALyC que tengan acceso digital al texto completo en el período 2010-2020; (ii) realizar un análisis bibliométrico con las citas a autores del PAL, utilizando una metodología cuantitativa desde el análisis de redes sociales (ARS).</p>
+
+		<p class="titulo-1-2" id="co">EArte Colombia</p>
+		<p class="titulo-5-1">La iniciativa de EArte-ALyC se originó en la Universidad Pontificia Bolivariana, y la impulsó entre los años 2016 y 2022, cuya semilla inicial fue el seminario organizado en torno a La producción de conocimiento en la universidad: metodologías y políticas de investigación. En la actualidad las dos principales universidades que apoyan EArte-Co son la Universidad del Tolima (UT)y la Universidad Distrital Francisco Jose De Caldas (UD). La UT logró la aprobación y financiamiento de un proyecto de investigación en el 2017, con la participación de 6 investigadores. La UD viene trabajando con 2 proyectos de investigación aprobados.Los proyectos aprobados se titulan: 1) Análisis de paradigmas de investigación en investigaciones en Educación Ambiental en tres universidades públicas en Colombia. (2010-2020). Este proyecto involucra a 3 investigador/as y 2) Análisis de Representaciones Sociales de Ambiente (RSA) en investigaciones de Educación Ambiental en tres universidades de Colombia (2015-2018), en este caso se involucran a dos investigador/as.</p>
+
+		<p class="titulo-1-2" id="cu">EArte Cuba</p>
+		<p class="titulo-5-1">El proyecto involucra, a 6 investigadores del CEEA-GEA, 4 colaboradores y 10 doctorandos, que están haciendo su investigación en la línea de educación ambiental y energética. Los antecedentes del CEEA-GEA, fue el Proyecto “GEA” (Gestión para la Educación Ambiental) que comenzó a implementarse desde 1995 en el Instituto Superior Pedagógico Enrique José Varona (hoy UCPEJV) y en Ciudad Escolar Libertad, orientado a la formación ambiental permanente de profesionales de la educación. El CEEA-GEA, como parte de los proyectos de investigación culminados, cinco en total con más de 20 resultados sobre educación ambiental y energética, ha incorporado entre sus acciones, revelar el estado del arte en este tema, desde las tesis doctorales en Ciencias Pedagógicas y de la Educación en Cuba. Un primer estudio reveló los resultados desde 1980 hasta 2012, donde se pretendió difundir el conocimiento que se ha venido generando de forma progresiva en los últimos años en el campo de la investigación sobre este tema; y orientar los aspectos educativos y pedagógicos presentes en las tesis defendidas y al que se le ha dado continuidad hasta la fecha, con el objetivo de revelar los principales aportes de las tesis doctorales a la educación ambiental y energética.</p>
+
+		<p class="titulo-1-2" id="me">EArte México</p>
+		<p class="titulo-5-1">En el marco del EArte ALyC, México viene desarrollando su proyecto a instancias de: (i) las tesis de maestrías y doctorados localizados en la UNAM y (ii) con base a un relevamiento impulsado por la Universidad Autónoma del Estado de Morelos (UAEM). En el caso de la UNAM se cuenta con un equipo conformado por 7 investigadores de esa Universidad, que analizan los períodos de presentación de tesis en las siguientes categorías i) 1996 y años previos, ii) 1997-2003, iii) 2004-2007, iv) 2008-2011, v) 2012 - 2019 y vi) 2020 - 2024. Por otra parte, en el caso de la UAEM se está en proceso de identificación del universo de tesis, incluyendo material proveniente de otras casas de altos estudios, particularmente de la Universidad Autónoma de Guerrero (UAGRO) y la Benemérita Universidad Autónoma de Puebla (BUAP). Por ahora, en la UAEM no se cuenta con financiamiento, siendo vinculada al Colectivo EArte ALyC desde 2019.</p>
+	</div>
+	<span class="margem"></span>
+<!--resumo-fim-->
+
+<!-- rodapé -->
+		<footer id="footer">
+				<img src="../img/logo.png" class="logo-footer">
+
+				<div class="slideshow-container">
+					<img class="imagem-slideshow" src="../img/br-1.png" alt="Imagem 1">
+			        <img class="imagem-slideshow" src="../img/alyc-1.png" alt="Imagem 2">
+			        <img class="imagem-slideshow" src="../img/br-1.png" alt="Imagem 3">
+			        <img class="imagem-slideshow" src="../img/alyc-1.png" alt="Imagem 4">
+			    </div>
+			</footer>
+	</body>
+	<script type="text/javascript">
+
+function Argentina() {
+    var infoElement = document.getElementById("local-argentina");
+    var informacoes = "Argentina: iniciamos en 2020, tenemos de 14 a 16 miembros en 9 universidades. Actualmente recibimos financiamiento del PI-UNSE <a href='#ar'>ver mais...</a>";
+
+    infoElement.innerHTML = informacoes;
+
+    if (infoElement.style.display === "none" || infoElement.style.display === "") {
+    infoElement.style.display = "block";
+    } else {
+    infoElement.style.display = "none";
+    }
+//    infoElement.style.display = "block"; // Sempre mostra o infoElement
+}
+
+
+function Brazil() {
+    var infoElement = document.getElementById("local-brasil");
+    var informacoes = "Brasil: comenzamos en 2008 y tenemos 39 miembros en 8 universidades. Catalogamos 6142 tesis y disertaciones, entre 1981 y 2020. Actualmente recibimos financiamiento de la FAPEMIG <a href='#br'>ver mais...</a>"
+
+    infoElement.innerHTML = informacoes;
+
+    if (infoElement.style.display === "none" || infoElement.style.display === "") {
+    infoElement.style.display = "block";
+    } else {
+    infoElement.style.display = "none";
+    }
+  }
+
+  function Colombia() {
+    var infoElement = document.getElementById("local-colombia");
+    var informacoes = "Colombia: Las principales universidades que apoyan EArte-Co son la Universidad del Tolima, con 6 investigadores, y la Universidad Distrital Francisco José De Caldas, con 3 investigadores. <a href='#co'>ver mais...</a>"
+
+    infoElement.innerHTML = informacoes;
+
+    if (infoElement.style.display === "none" || infoElement.style.display === "") {
+    infoElement.style.display = "block";
+    } else {
+    infoElement.style.display = "none";
+    }
+  }
+function Cuba() {
+    var infoElement = document.getElementById("local-cuba");
+    var informacoes = "Cuba: Somos 6 investigadores del CEEA-GEA, 4 colaboradores y 10 doctorandos. Del 157 tesis en el área de las Ciencias Pedagógicas y de la Educación se tienen 150 que ya se está haciendo su análisis <a href='#cu'>ver mais...</a>";
+
+    infoElement.innerHTML = informacoes;
+
+    if (infoElement.style.display === "none" || infoElement.style.display === "") {
+    infoElement.style.display = "block";
+    } else {
+    infoElement.style.display = "none";
+    }
+  }
+
+function Chile() {
+    var infoElement = document.getElementById("local-chile");
+    var informacoes = "Chile: Somos 2 investigadores desde la Universidad de los Lagos <a href='#ch'>ver mais...</a>";
+
+    infoElement.innerHTML = informacoes;
+
+    if (infoElement.style.display === "none" || infoElement.style.display === "") {
+    infoElement.style.display = "block";
+    } else {
+    infoElement.style.display = "none";
+    }
+  }
+
+function Mexico() {
+    var infoElement = document.getElementById("local-mexico");
+    var informacoes = "Mexico: Viene desarrollado su proyecto a instancias de la UNAM, con 6 investigadores, e de la UAEM <a href='#me'>ver mais...</a>";
+
+    infoElement.innerHTML = informacoes;
+
+    if (infoElement.style.display === "none" || infoElement.style.display === "") {
+    infoElement.style.display = "block";
+    } else {
+    infoElement.style.display = "none";
+    }
+  }
+	</script>
+</html>
