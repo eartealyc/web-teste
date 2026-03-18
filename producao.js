@@ -46,7 +46,6 @@ function processarCSV(csv) {
   const resultado = Papa.parse(csv, {
     header: true,
     skipEmptyLines: true,
-    delimiter: ";"
   });
 
   return resultado.data.map(linha => ({
