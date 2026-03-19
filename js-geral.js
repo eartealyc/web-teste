@@ -121,20 +121,45 @@ document.getElementById("local-map").addEventListener("click", limparMap);
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=1188344285&single=true&output=csv')
   .then(res => res.text())
   .then(csv => {
-    const linhas = csv.trim().split('\n').map(l => l.split(','));
 
-    // função auxiliar: letra + número → índice
+    // Trata linhas e delimitador corretamente
+    const linhas = csv
+      .trim()
+      .split(/\r?\n/)
+      .map(l => l.split(';')); // <- ajuste principal aqui
+
+    // Função para acessar célula (A=0, B=1...)
     function celula(coluna, linha) {
       const colIndex = coluna.charCodeAt(0) - 65;
-      return linhas[linha - 1][colIndex];
+      return (linhas[linha - 1] && linhas[linha - 1][colIndex]) || '';
     }
 
-    document.getElementById('b2').innerText = celula('B', 2);
-    document.getElementById('b3').innerText = celula('B', 3);
-    document.getElementById('b4').innerText = celula('B', 4);
-    document.getElementById('b5').innerText = celula('B', 5);
-    document.getElementById('b6').innerText = celula('B', 6);
-    document.getElementById('b7').innerText = celula('B', 7);
-    document.getElementById('b8').innerText = celula('B', 8);
-    document.getElementById('d2').innerText = celula('D', 2);
+    // Limpa valores tipo "-"
+    function limpar(valor) {
+      return valor === '-' ? '' : valor;
+    }
+
+    // Função segura para inserir no HTML
+    function set(id, valor) {
+      const el = document.getElementById(id);
+      if (el) el.innerText = limpar(valor);
+    }
+
+    // Preenchimento
+    set('b2', celula('B', 2));
+    set('b3', celula('B', 3));
+    set('b4', celula('B', 4));
+    set('b5', celula('B', 5));
+    set('b6', celula('B', 6));
+    set('b7', celula('B', 7));
+    set('b8', celula('B', 8));
+
+    set('d2', celula('D', 2));
+
+    // Debug (pode remover depois)
+    console.log(linhas);
+
+  })
+  .catch(err => {
+    console.error('Erro ao carregar CSV:', err);
   });
