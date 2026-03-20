@@ -122,22 +122,39 @@ document.getElementById("local-map").addEventListener("click", limparMap);
 
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=1188344285&single=true&output=csv')
   .then(res => res.text())
-  
   .then(csv => {
     const linhas = csv.trim().split('\n').map(l => l.split(','));
 
-    // função auxiliar: letra + número → índice
-    function celula(coluna, linha) {
-      const colIndex = coluna.charCodeAt(0) - 65;
-      return linhas[linha - 1][colIndex];
+    const header = linhas[0];
+    const dados = linhas.slice(1);
+
+    const mapa = {};
+
+    dados.forEach(linha => {
+      const pais = (linha[0] || '').trim();
+      const montante = (linha[1] || '').trim();
+      const fecha = (linha[2] || '').trim();
+
+      if (pais) {
+        mapa[pais.toLowerCase()] = { montante, fecha };
+      }
+    });
+
+    function set(id, valor) {
+      const el = document.getElementById(id);
+      if (el) el.innerText = valor || '-';
     }
 
-    document.getElementById('b2').innerText = celula('B', 2);
-    document.getElementById('b3').innerText = celula('B', 3);
-    document.getElementById('b4').innerText = celula('B', 4);
-    document.getElementById('b5').innerText = celula('B', 5);
-    document.getElementById('b6').innerText = celula('B', 6);
-    document.getElementById('b7').innerText = celula('B', 7);
-    document.getElementById('b8').innerText = celula('B', 8);
-    document.getElementById('c2').innerText = celula('C', 2);
+    set('b2', mapa['argentina']?.montante);
+    set('b3', mapa['brasil']?.montante);
+    set('b4', mapa['chile']?.montante);
+    set('b5', mapa['colombia']?.montante);
+    set('b6', mapa['cuba']?.montante);
+    set('b7', mapa['mexico']?.montante);
+    set('b8', mapa['total']?.montante);
+    set('c2', mapa['argentina']?.fecha);
+
+  })
+  .catch(err => {
+    console.error('Erro ao carregar CSV:', err);
   });
