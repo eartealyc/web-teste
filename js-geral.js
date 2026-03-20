@@ -1,3 +1,56 @@
+document.addEventListener('DOMContentLoaded', () => {
+
+  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=1188344285&single=true&output=csv')
+    .then(r => r.text())
+    .then(csv => {
+
+      const linhas = csv.trim().split('\n');
+
+      function getLinha(nome) {
+        return linhas.find(l =>
+          l.toLowerCase().startsWith(nome.toLowerCase())
+        );
+      }
+
+      function getMontante(nome) {
+        const linha = getLinha(nome);
+        if (!linha) return '-';
+
+        const partes = linha.split(',');
+        return partes[1] ? partes[1].trim() : '-';
+      }
+
+      function getFecha(nome) {
+        const linha = getLinha(nome);
+        if (!linha) return '-';
+
+        const partes = linha.split(',');
+        return partes[2] ? partes[2].trim() : '-';
+      }
+
+      function set(id, valor) {
+        const el = document.getElementById(id);
+        if (el) el.innerText = valor;
+      }
+
+      set('b2', getMontante('Argentina'));
+      set('b3', getMontante('Brasil'));
+      set('b4', getMontante('Chile'));
+      set('b5', getMontante('Colombia'));
+      set('b6', getMontante('Cuba'));
+      set('b7', getMontante('Mexico'));
+      set('b8', getMontante('Total'));
+
+      set('c2', getFecha('Argentina'));
+
+    })
+    .catch(e => console.error(e));
+
+});
+
+
+
+
 //cabeçalho
 window.addEventListener("scroll", function() {
   var header = document.getElementById("header");
