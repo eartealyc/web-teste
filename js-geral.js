@@ -118,8 +118,11 @@ document.getElementById("local-map").addEventListener("click", limparMap);
 
 //: mostrador do montante painel de dados 
 
+
+
 fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=1188344285&single=true&output=csv')
   .then(res => res.text())
+  
   .then(csv => {
     const linhas = csv.trim().split('\n').map(l => l.split(','));
 
@@ -136,5 +139,5 @@ fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1
     document.getElementById('b6').innerText = celula('B', 6);
     document.getElementById('b7').innerText = celula('B', 7);
     document.getElementById('b8').innerText = celula('B', 8);
-    document.getElementById('d2').innerText = celula('D', 2);
+    document.getElementById('c2').innerText = celula('C', 2);
   });
