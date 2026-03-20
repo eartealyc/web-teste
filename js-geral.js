@@ -126,51 +126,62 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.text())
     .then(csv => {
 
-      // 🔹 Divide linhas
       const linhas = csv.trim().split('\n');
 
-      // 🔹 Cabeçalho
-      const headers = linhas[0].split(',').map(h => h.trim().toLowerCase());
+      // 🔹 Cabeçalho seguro
+      const headers = linhas[0]
+        .split(',')
+        .map(h => h.trim().toLowerCase());
 
-      // 🔹 Converte para objeto
-      const dados = linhas.slice(1).map(linha => {
-        const valores = linha.split(',');
+      // 🔹 Converte para objeto (ignorando linhas vazias)
+      const dados = linhas
+        .slice(1)
+        .map(linha => linha.split(','))
+        .filter(valores => valores.some(v => v && v.trim() !== '')) // remove linhas vazias
+        .map(valores => {
+          const obj = {};
+          headers.forEach((h, i) => {
+            obj[h] = (valores[i] || '').trim();
+          });
 
-        const obj = {};
-        headers.forEach((h, i) => {
-          obj[h] = (valores[i] || '').trim();
+          // 🔹 normaliza país (resolve "Colombia ")
+          if (obj.pais) {
+            obj.pais = obj.pais.trim().toLowerCase();
+          }
+
+          return obj;
         });
 
-        return obj;
-      });
+      console.log('DADOS:', dados);
 
-      console.log('DADOS:', dados); // DEBUG
-
-      // 🔹 Função helper
+      // 🔹 helper mais robusto
       function getPais(nome) {
-        return dados.find(p => p.pais.toLowerCase() === nome.toLowerCase());
+        return dados.find(p => p.pais === nome.toLowerCase());
       }
 
+      // 🔹 evita undefined na tela
       function set(id, valor) {
         const el = document.getElementById(id);
-        if (el) el.innerText = valor || '-';
+        if (el) {
+          el.innerText = valor && valor !== '' ? valor : '-';
+        }
       }
 
       // 🔹 Preenche UI
-      set('b2', getPais('Argentina')?.montante);
-      set('b3', getPais('Brasil')?.montante);
-      set('b4', getPais('Chile')?.montante);
-      set('b5', getPais('Colombia')?.montante);
-      set('b6', getPais('Cuba')?.montante);
-      set('b7', getPais('Mexico')?.montante);
-      set('b8', getPais('Total')?.montante);
+      set('b2', getPais('argentina')?.montante);
+      set('b3', getPais('brasil')?.montante);
+      set('b4', getPais('chile')?.montante);
+      set('b5', getPais('colombia')?.montante);
+      set('b6', getPais('cuba')?.montante);
+      set('b7', getPais('mexico')?.montante);
+      set('b8', getPais('total')?.montante);
 
-      // Data (pegando da Argentina como você fez)
-      set('c2', getPais('Argentina')?.fecha);
+      // 🔹 Data
+      set('c2', getPais('argentina')?.fecha);
 
     })
     .catch(err => {
-      console.error('Erro:', err);
+      console.error('Erro no fetch:', err);
     });
 
 });
