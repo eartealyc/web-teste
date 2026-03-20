@@ -123,65 +123,50 @@ document.getElementById("local-map").addEventListener("click", limparMap);
 document.addEventListener('DOMContentLoaded', () => {
 
   fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=1188344285&single=true&output=csv')
-    .then(res => res.text())
+    .then(r => r.text())
     .then(csv => {
 
       const linhas = csv.trim().split('\n');
 
-      // 🔹 Cabeçalho seguro
-      const headers = linhas[0]
-        .split(',')
-        .map(h => h.trim().toLowerCase());
-
-      // 🔹 Converte para objeto (ignorando linhas vazias)
-      const dados = linhas
-        .slice(1)
-        .map(linha => linha.split(','))
-        .filter(valores => valores.some(v => v && v.trim() !== '')) // remove linhas vazias
-        .map(valores => {
-          const obj = {};
-          headers.forEach((h, i) => {
-            obj[h] = (valores[i] || '').trim();
-          });
-
-          // 🔹 normaliza país (resolve "Colombia ")
-          if (obj.pais) {
-            obj.pais = obj.pais.trim().toLowerCase();
-          }
-
-          return obj;
-        });
-
-      console.log('DADOS:', dados);
-
-      // 🔹 helper mais robusto
-      function getPais(nome) {
-        return dados.find(p => p.pais === nome.toLowerCase());
+      function getLinha(nome) {
+        return linhas.find(l =>
+          l.toLowerCase().startsWith(nome.toLowerCase())
+        );
       }
 
-      // 🔹 evita undefined na tela
+      function getMontante(nome) {
+        const linha = getLinha(nome);
+        if (!linha) return '-';
+
+        const partes = linha.split(',');
+        return partes[1] ? partes[1].trim() : '-';
+      }
+
+      function getFecha(nome) {
+        const linha = getLinha(nome);
+        if (!linha) return '-';
+
+        const partes = linha.split(',');
+        return partes[2] ? partes[2].trim() : '-';
+      }
+
       function set(id, valor) {
         const el = document.getElementById(id);
-        if (el) {
-          el.innerText = valor && valor !== '' ? valor : '-';
-        }
+        if (el) el.innerText = valor;
       }
 
-      // 🔹 Preenche UI
-      set('b2', getPais('argentina')?.montante);
-      set('b3', getPais('brasil')?.montante);
-      set('b4', getPais('chile')?.montante);
-      set('b5', getPais('colombia')?.montante);
-      set('b6', getPais('cuba')?.montante);
-      set('b7', getPais('mexico')?.montante);
-      set('b8', getPais('total')?.montante);
+      set('b2', getMontante('Argentina'));
+      set('b3', getMontante('Brasil'));
+      set('b4', getMontante('Chile'));
+      set('b5', getMontante('Colombia'));
+      set('b6', getMontante('Cuba'));
+      set('b7', getMontante('Mexico'));
+      set('b8', getMontante('Total'));
 
-      // 🔹 Data
-      set('c2', getPais('argentina')?.fecha);
+      set('c2', getFecha('Argentina'));
 
     })
-    .catch(err => {
-      console.error('Erro no fetch:', err);
-    });
+    .catch(e => console.error(e));
 
+});
 });
