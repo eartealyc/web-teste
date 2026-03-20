@@ -120,41 +120,57 @@ document.getElementById("local-map").addEventListener("click", limparMap);
 
 
 
-fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=1188344285&single=true&output=csv')
-  .then(res => res.text())
-  .then(csv => {
-    const linhas = csv.trim().split('\n').map(l => l.split(','));
+document.addEventListener('DOMContentLoaded', () => {
 
-    const header = linhas[0];
-    const dados = linhas.slice(1);
+  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=1188344285&single=true&output=csv')
+    .then(res => res.text())
+    .then(csv => {
 
-    const mapa = {};
+      // 🔹 Divide linhas
+      const linhas = csv.trim().split('\n');
 
-    dados.forEach(linha => {
-      const pais = (linha[0] || '').trim();
-      const montante = (linha[1] || '').trim();
-      const fecha = (linha[2] || '').trim();
+      // 🔹 Cabeçalho
+      const headers = linhas[0].split(',').map(h => h.trim().toLowerCase());
 
-      if (pais) {
-        mapa[pais.toLowerCase()] = { montante, fecha };
+      // 🔹 Converte para objeto
+      const dados = linhas.slice(1).map(linha => {
+        const valores = linha.split(',');
+
+        const obj = {};
+        headers.forEach((h, i) => {
+          obj[h] = (valores[i] || '').trim();
+        });
+
+        return obj;
+      });
+
+      console.log('DADOS:', dados); // DEBUG
+
+      // 🔹 Função helper
+      function getPais(nome) {
+        return dados.find(p => p.pais.toLowerCase() === nome.toLowerCase());
       }
+
+      function set(id, valor) {
+        const el = document.getElementById(id);
+        if (el) el.innerText = valor || '-';
+      }
+
+      // 🔹 Preenche UI
+      set('b2', getPais('Argentina')?.montante);
+      set('b3', getPais('Brasil')?.montante);
+      set('b4', getPais('Chile')?.montante);
+      set('b5', getPais('Colombia')?.montante);
+      set('b6', getPais('Cuba')?.montante);
+      set('b7', getPais('Mexico')?.montante);
+      set('b8', getPais('Total')?.montante);
+
+      // Data (pegando da Argentina como você fez)
+      set('c2', getPais('Argentina')?.fecha);
+
+    })
+    .catch(err => {
+      console.error('Erro:', err);
     });
 
-    function set(id, valor) {
-      const el = document.getElementById(id);
-      if (el) el.innerText = valor || '-';
-    }
-
-    set('b2', mapa['argentina']?.montante);
-    set('b3', mapa['brasil']?.montante);
-    set('b4', mapa['chile']?.montante);
-    set('b5', mapa['colombia']?.montante);
-    set('b6', mapa['cuba']?.montante);
-    set('b7', mapa['mexico']?.montante);
-    set('b8', mapa['total']?.montante);
-    set('c2', mapa['argentina']?.fecha);
-
-  })
-  .catch(err => {
-    console.error('Erro ao carregar CSV:', err);
-  });
+});
