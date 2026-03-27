@@ -12,13 +12,8 @@ proximos passos: criar nova planilha oficial e trocr os 2  URLS
 
    ========================= */
 let dados = [];
-
-fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
- .then(res => res.text())
- .then(csv => {
-   dados = processarCSV(csv);
-   renderizar(dados);
- });
+let dadosFiltrados = [];
+let itensVisiveis = 20;
 
 /*-----------MAPEAMENTOS----------*/
 
@@ -31,7 +26,7 @@ const mapaPaises = {
   me: "México"
 };
 
-const codigo = ["td", "livro", "artigo", "evento", "relatorio",];
+const codigo = ["td", "livro", "artigo", "evento", "relatorio"];
 
 const mapaTipos = {
   tipo1: "Tesis de doctorado y maestría | Teses de doutorado e mestrado | Doctoral and Master's theses",
@@ -40,6 +35,7 @@ const mapaTipos = {
   tipo4: "Artículos en eventos | Artigos em eventos | Papers in events",
   tipo5: "Informes | Relatório | Report"
 };
+
 /*-----------PROCESSAR CSV---------*/
 
 function processarCSV(csv) {
@@ -60,90 +56,85 @@ function processarCSV(csv) {
   }));
 }
 
-
 /*---------RENDERIZAÇÃO---------*/
 
 function renderizar(lista) {
   const ul = document.getElementById("listaItens");
   const contador = document.getElementById("contador");
+  const botao = document.getElementById("carregarMais");
 
   ul.innerHTML = "";
 
-  lista.forEach(item => {
+  const listaVisivel = lista.slice(0, itensVisiveis);
+
+  listaVisivel.forEach(item => {
     const li = document.createElement("li");
 
     const tipoFormatado = mapaTipos[item.tipo] || item.tipo;
 
     li.innerHTML = `
-  <span class="item-geral item-nome">${tipoFormatado}</span>
-  
-  </br>
+      <span class="item-geral item-nome">${tipoFormatado}</span>
+      </br>
 
-  ${item.descricao ? `
-  <span class="item-geral">
-      <strong>Descripción | Descrição | Description: </strong>
-      <span class="item-descricao">${item.descricao}</span>
-  </span>
-  ` : ""}
-
-  </br>
-
-  <span class="item-grupo"> 
-      ${item.autor ? `
+      ${item.descricao ? `
       <span class="item-geral">
-          <strong>Autor | Author: </strong>
-          <span class="item-autor">${item.autor}</span>
-      </span>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      ` : ""}
-      
-      ${item.ano ? `
-      <span class="item-geral">
-          <strong>Año | Ano | Year: </strong>
-          <span class="item-ano">${item.ano}</span>
-      </span>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      ` : ""}
+          <strong>Descripción | Descrição | Description: </strong>
+          <span class="item-descricao">${item.descricao}</span>
+      </span>` : ""}
 
-      ${item.pais ? `
-      <span class="item-geral">
-          <strong>Pais | País| Country: </strong>
-          <span class="item-pais">${item.pais}</span>
+      </br>
+
+      <span class="item-grupo"> 
+          ${item.autor ? `
+          <span class="item-geral">
+              <strong>Autor | Author: </strong>
+              <span class="item-autor">${item.autor}</span>
+          </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;` : ""}
+          
+          ${item.ano ? `
+          <span class="item-geral">
+              <strong>Año | Ano | Year: </strong>
+              <span class="item-ano">${item.ano}</span>
+          </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;` : ""}
+
+          ${item.pais ? `
+          <span class="item-geral">
+              <strong>Pais | País| Country: </strong>
+              <span class="item-pais">${item.pais}</span>
+          </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;` : ""}
       </span>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-      ` : ""}
 
-  </span>
-
-  ${item.local ? `
+      ${item.local ? `
       <span class="item-geral">
           <strong>Local | Place: </strong>
           <span class="item-local">${item.local}</span>
-      </span>
-      ` : ""}
+      </span>` : ""}
 
-  ${item.link ? `
-  <span class="item-geral item-link">
-      <a class="item-link" href="${item.link}" target="_blank">🔗<strong>Link</strong></a>
-  </span>
-  ` : ""}
-`;
+      ${item.link ? `
+      <span class="item-geral item-link">
+          <a class="item-link" href="${item.link}" target="_blank">🔗<strong>Link</strong></a>
+      </span>` : ""}
+    `;
 
     ul.appendChild(li);
   });
 
   contador.textContent = `📂 ${lista.length}`;
+
+  // controle do botão
+  if (botao) {
+    if (itensVisiveis >= lista.length) {
+      botao.style.display = "none";
+    } else {
+      botao.style.display = "block";
+    }
+  }
 }
 
-/*----------------FILTRAR (BUSCA + CHECKBOX)-------------*/
+/*----------------FILTRAR-------------*/
 
 function filtrarLista() {
-  const termoBusca = document
-    .getElementById("busca")
-    .value
-    .toLowerCase()
-    .trim();
-
+  const termoBusca = document.getElementById("busca").value.toLowerCase().trim();
   const checkboxes = document.querySelectorAll(".input-filtro:checked");
 
   const filtrosTipo = new Set();
@@ -190,64 +181,63 @@ function filtrarLista() {
     return tipoOK && paisOK && buscaOK;
   });
 
-  renderizar(resultado);
+  dadosFiltrados = resultado;
+  itensVisiveis = 20;
+
+  renderizar(dadosFiltrados);
 }
 
-/* =========================
-   LIMPAR FILTROS
-   ========================= */
+/*----------------CARREGAR MAIS-------------*/
+
+function carregarMais() {
+  itensVisiveis += 20;
+  renderizar(dadosFiltrados);
+}
+
+/*----------------LIMPAR-------------*/
 
 function clean() {
-  document
-    .querySelectorAll(".input-filtro")
+  document.querySelectorAll(".input-filtro")
     .forEach(cb => (cb.checked = false));
 
   document.getElementById("busca").value = "";
 
-  renderizar(dados);
+  dadosFiltrados = dados;
+  itensVisiveis = 20;
+
+  renderizar(dadosFiltrados);
 }
 
-/* =========================
-   INICIALIZAÇÃO
-   ========================= */
+/*----------------INICIALIZAÇÃO-------------*/
 
-   document.addEventListener("DOMContentLoaded", () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vQN3tihC9fA9hwIDLwI9stuL1-UQOZVubJ6G0_bOMDej3TUySXK-yO9unf3sbW40ph9HEv6-1DH2XN-/pub?gid=199551209&single=true&output=csv")
     .then(res => res.text())
     .then(csv => {
       dados = processarCSV(csv);
-      renderizar(dados);
+      dadosFiltrados = dados;
+      renderizar(dadosFiltrados);
     });
 
   document.getElementById("busca")
     .addEventListener("input", filtrarLista);
 });
 
+/*----------------UI-------------*/
 
 function ocultarfiltro() {
-    const filtro = document.getElementById('filtro');
-
-    if (filtro.style.display === 'none') {
-      filtro.style.display = 'flex';
-    } else {
-      filtro.style.display = 'none';
-    }
-  }
-
-// Função para esconder caixa de busca produção
+  const filtro = document.getElementById('filtro');
+  filtro.style.display = filtro.style.display === 'none' ? 'flex' : 'none';
+}
 
 window.addEventListener("scroll", function() {
-  var elements = document.querySelectorAll(".ocultarbusca");
+  const elements = document.querySelectorAll(".ocultarbusca");
 
-  for (var i = 0; i < elements.length; i++) {
-    if (window.pageYOffset < 920) {
-      elements[i].style.display = "flex";
+  elements.forEach(el => {
+    if (window.pageYOffset < 830) {
+      el.classList.remove("oculto");
+    } else {
+      el.classList.add("oculto");
     }
-    else {
-      elements[i].style.display = "none";
-    }
-  }
+  });
 });
-
-

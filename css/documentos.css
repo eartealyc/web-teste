@@ -6,15 +6,15 @@
         margin: auto 5vw 10vh 5vw;
     }
         .ref-autor{
-            width: 13vw;
-            height: 15vw;
+            width: 400px;
+            height: 500px;
             margin: 5vh 1vw;
             border-radius: 20px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
             .ref-img{
-                width: 13vw;
-                height: 15vw;
+                width: 400px;
+                height: 500px;
                 border-radius: 20px;
             }
             .ref-content{
@@ -35,7 +35,7 @@
                     font-size: 1em;
                     color: black;
                     z-index: 0;
-                    background-color: #DCDCDC;
+                    background-color: #F8F8F8;
                     transform: translate(30px, 0px);
                     border-radius: 20px;
                 }
@@ -45,4 +45,7 @@
                     }
                     .ref-content:hover{
                         cursor: pointer;
+                    }
+                    .ref-content-p:hover{
+                         color:blue;
                     }
