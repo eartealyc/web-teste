@@ -208,7 +208,15 @@
                             text-decoration: underline;
                         }
 
+#carregarMais {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd;
+}
 
+#carregarMais:hover {
+  background-color: #eaeaea;
+}
 
 
 
